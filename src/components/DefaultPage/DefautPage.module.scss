@@ -1,0 +1,49 @@
+@import '/src/styles/breakPoint.scss';
+@import '/src/styles/base';
+
+@media (min-width: $deskTop-min-width) {
+    .container {
+        flex-direction: column;
+        width: calc(100% - 121px);
+        max-width: 1200px;
+        align-items: center;
+        height: auto;
+        min-height: 100vh;
+        background-color: transparent;
+
+        &--dark {
+            background-color: $dark-color;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}
+
+@media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px;
+        align-items: center;
+        height: auto;
+
+        &--dark {
+            background-color: $dark-color;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}
+
+@media (max-width: $smartphone-max-width) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 1200px;
+        align-items: center;
+        height: auto;
+
+        &--dark {
+            background-color: $dark-color;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}

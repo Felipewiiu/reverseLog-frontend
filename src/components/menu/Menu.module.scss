@@ -1,0 +1,175 @@
+@import 'styles/base.scss';
+@import './respMenu.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+
+    &__nav {
+
+        height: 2.5rem;
+        border-radius: 2.9375rem;
+        border: 0.5px solid #d4d4d4;
+        box-shadow: 1px 1px 2px #d4d4d472;
+
+        .container__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+
+        }
+
+        .container__link {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                font-size: 1rem;
+                font-family: $font-title;
+                font-style: normal;
+                font-weight: 300;
+                color: $title-color;
+                cursor: pointer;
+            }
+
+        }
+
+        .container__highlighted {
+            a {
+                color: $purple;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .container__hamburguer {
+        margin-top: 3.5rem;
+        position: fixed;
+        width: 0px;
+        height: 0px;
+        transform: scale(0);
+        border: solid 0.5px rgba(99, 99, 99, 0.295);
+        border-radius: 10px;
+        transition: all 300ms ease-in-out;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 300ms ease-in-out;
+            gap: 1rem;
+
+            .options {
+                list-style: none;
+
+                a {
+                    font-size: 1rem;
+                    text-decoration: none;
+                    font-family: $font-title;
+                    font-style: normal;
+                    font-weight: 400;
+                    color: $title-color;
+                    display: none;
+                }
+
+            }
+        }
+    }
+
+    .container__hamburguer--active {
+        background-color: #f6f6f6;
+        margin-top: 13rem;
+        padding: 1rem;
+        position: fixed;
+        transform: scale(1);
+        width: 10rem;
+        height: 10rem;
+        border: solid 0.5px $title-color;
+        border-radius: 10px;
+        transition: all 300ms ease-in-out;
+
+        ul {
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .options {
+                list-style: none;
+
+                a {
+                    font-size: 1rem;
+                    text-decoration: none;
+                    font-family: $font-title;
+                    font-style: normal;
+                    font-weight: 500;
+                    color: $title-color;
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .hamburguer {
+        font-size: 2.5rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .Mode__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16rem;
+        width: 3rem;
+        height: 3rem;
+        margin-right: 24px;
+        margin-left: 8px;
+        background-color: rgb(20, 21, 68);
+        transition: all 1000ms ease-in-out;
+        
+        &:active {
+            transition: all 100ms ease-in-out;
+            background-color: rgb(137 74 243);
+            transform: scale(1.1);
+        }
+    }
+
+    .container__mode {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &--dark {
+        background-color: $dark-color;
+        transition: all 100ms ease-in-out;
+        .container__nav {
+            border: 0.5px solid $purple-contrast;
+            box-shadow: 1px 1px 2px #be161600;
+        }
+        .container__link{
+            a{
+                transition: all 100ms ease-in-out;
+                color: $white;
+            }
+        }
+
+        .container__highlighted {
+            a {
+                color: $purple-contrast;
+                font-weight: 500;
+            }
+        }
+    }
+
+}

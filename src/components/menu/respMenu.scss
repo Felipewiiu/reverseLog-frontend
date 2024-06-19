@@ -1,0 +1,127 @@
+@import '/src/styles/breakPoint';
+@import '/src/styles/base';
+
+
+@media screen and (min-width: $deskTop-min-width) {
+    .container {
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        height: 5.5rem;
+        width: 100%;
+        max-width: 1200px;
+        position: absolute;
+        justify-content: space-between;
+        .container__nav {
+            display: flex;
+            width: 100%;
+            max-width: 40rem;
+            position: sticky;
+        }
+
+        .container__hamburguer {
+            display: none;
+        }
+
+        .hamburguer {
+            display: none;
+        }
+
+       
+
+        .container__mode {
+            
+            .Mode__text {
+                color: $text-color;
+                margin-right: 0px;
+                margin-left: 1rem;
+                
+            }
+        }
+
+        span {
+            display: flex;
+            color: $text-color;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    .container {
+        height: 3rem;
+        border-bottom: solid 1px rgba(105, 105, 105, 0.226);
+        padding-bottom: 1rem;
+        justify-content: end;
+        position: fixed;
+        width: 100%;
+        background: rgb(137, 74, 243);
+        background: linear-gradient(90deg, rgba(137, 74, 243, 1) 30%, rgba(103, 22, 237, 1) 100%);
+        right: 0;
+        ;
+        right: 0;
+        top: 0;
+        height: 4.5rem;
+        padding-top: 1rem;
+        padding-right: 2rem;
+        z-index: 1;
+        box-shadow: 0px 1px 2px rgba(105, 105, 105, 0.226);
+
+        .container__nav {
+            display: none;
+            justify-content: end;
+        }
+
+        .container__mode {
+            display: flex;
+            .Mode__text {
+                color: $white;
+                
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: $smartphone-max-width) {
+    .container {
+        height: 3rem;
+        border-bottom: solid 1px rgba(105, 105, 105, 0.226);
+        padding-bottom: 1rem;
+        justify-content: end;
+        position: fixed;
+        width: 100%;
+        background: rgb(137, 74, 243);
+        background: linear-gradient(90deg, rgba(137, 74, 243, 1) 30%, rgba(103, 22, 237, 1) 100%);
+        right: 0;
+        top: 0;
+        height: 4.5rem;
+        padding-top: 1rem;
+        padding-right: 2rem;
+        z-index: 1;
+        box-shadow: 0px 1px 2px rgba(105, 105, 105, 0.226);
+
+        .container__nav {
+            display: none;
+            justify-content: end;
+        }
+
+        .Mode {
+            display: flex;
+
+        }
+
+        .container__mode {
+            display: flex;
+            .Mode__text {
+                color: $white;
+                
+            }
+        }
+
+
+
+        span {
+            display: flex;
+        }
+    }
+}

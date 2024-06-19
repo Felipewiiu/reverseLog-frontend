@@ -1,0 +1,15 @@
+@import '../../styles/base.scss';
+@import '/src/styles/breakPoint.scss';
+@import './respLogin.module.scss';
+
+
+
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    flex-direction: column;
+   
+
+}
+

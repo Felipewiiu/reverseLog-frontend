@@ -1,0 +1,107 @@
+@media screen and (min-width: $deskTop-min-width) {
+    .container {
+        width: calc(100% - 121px);
+        height: 100vh;
+        position: relative;
+        align-items: start;
+    }
+
+    .container__outlet {
+        align-items: center;
+    }
+
+    .content {
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .container__secundary {
+        width: 60%;
+
+        h1 {
+            font-size: 4rem;
+        }
+        p {
+            width: 70%;
+        }
+    }
+
+    .container__imgProfile {
+        border-radius: 0px 1.25rem 1.25rem 1.25rem;
+        width: 24rem;
+        height: 24.4375rem;
+    }
+
+}
+
+@media screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    .container {
+        width: 100vw;
+        padding-inline: 1rem;
+        align-items: center;
+    }
+
+    .container__outlet {
+        align-items: center;
+    }
+
+    .content {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+
+        .container__secundary {
+            width: 100%;
+
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    .container__imgProfile {
+        border-radius: 20rem;
+        width: 16rem;
+        height: 16rem;
+        margin-block: 3rem;
+    }
+}
+
+@media screen and (max-width: $smartphone-max-width) {
+    .container {
+        width: 100vw;
+        padding-inline: 1rem;
+        margin-top: 4rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container__outlet {
+        align-items: start;
+    }
+
+    .content {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-items: center;
+
+        .container__secundary {
+            width: 100%;
+
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                width: 100%;
+            }
+        }
+    }
+
+    .container__imgProfile {
+        border-radius: 20rem;
+        width: 9.4375rem;
+        height: 9.4375rem;
+        margin-block: 3rem;
+
+    }
+}

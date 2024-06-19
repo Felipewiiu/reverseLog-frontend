@@ -1,0 +1,75 @@
+@import '/src/styles/base';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+
+    .container_base {
+        display: flex;
+        justify-content: space-between;
+        width: 75.0625rem;
+        height: 38.3125rem;
+        flex-shrink: 0;
+
+        .title {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+
+            h1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-title;
+                color: $title-color;
+                margin-bottom: 2rem;
+                padding-block: 10px;
+                text-align: center;
+                margin-top: 40%;
+                height: 5rem;
+                font-size: 4rem;
+                font-style: normal;
+                font-weight: 700;
+            }
+
+            button {
+                width: 90%;
+                height: 4.125rem;
+                flex-shrink: 0;
+                border-radius: 0.625rem;
+                border: 1px solid #A8D1D1;
+                background: #FFF;
+                color: #343434;
+                font-family: $font-title;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                cursor: pointer;
+                margin-bottom: 45px;
+
+                &:hover {
+                    background-color: $yellow;
+                    color: #fdfdfd;
+                    transition: all 200ms ease-in-out;
+
+                }
+
+                &:active {
+                    transform: scale(0.92);
+                    transition: all 100ms ease-out;
+                }
+            }
+        }
+
+
+    }
+
+}
