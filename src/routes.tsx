@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from 'pages/login';
+import Login from 'pages/login';
 import DefaultPage from 'components/DefaultPage';
 import { useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
@@ -19,7 +19,7 @@ export default function AppRoutes() {
       <Router>
 
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Login />} />
 
 
         </Routes>

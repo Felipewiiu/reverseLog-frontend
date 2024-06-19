@@ -1,0 +1,33 @@
+
+
+.container {
+    display: flex;
+    
+    flex-direction: column;
+    height: min-content;
+    gap: 10px;
+    
+    .input {
+        height: 40px;
+        border-color: rgb(117, 107, 107);
+        width: 300px;
+        padding: 0.75rem 1rem;
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #8f8f8f;
+        border-radius: 0.25rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 0 0.2rem rgba(#2980b9, 0.25);
+            outline: none;
+          }
+        
+          &::placeholder {
+            color: #8f8f8f;
+          }
+        
+    }
+
+}

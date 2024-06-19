@@ -7,9 +7,103 @@
 
 .container {
     display: flex;
-    max-width: 1200px;
-    flex-direction: column;
-   
+    // max-width: 1200px;
+
+
+    &__screenAnimation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(45deg, #000c16, #0895e7, #1b66ac);
+        background-size: 100% 300%;
+        border-radius: 0px 30px 30px 0px;
+
+        &__title {
+            color: aliceblue;
+            font-size: $fontSize-title;
+            padding: 0.5rem;
+            transition: all 1000ms;
+            .arrow{
+                font-size: 3rem;
+            }
+
+        }
+
+        &__title::after {
+            content: '';
+           
+            height: 0.188rem;
+            margin-top: 0.9rem;
+            background-color: currentColor;
+            display: block;
+            animation: arrow 4000ms ease-in-out infinite;
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+
+        }
+
+        @keyframes arrow {
+            0% {
+                width: 0%;
+                color: rgb(241, 202, 29);
+            }
+        
+            50% {
+                width: 50%;
+                color: rgb(250, 234, 5);
+            }
+        
+            100% {
+               width:  110%;
+               color: rgb(250, 234, 5);
+            }
+        }
+
+        &__title::before {
+            content: '';
+            
+            height: 0.188rem;
+            margin-top: 0.9rem;
+            background-color: currentColor;
+            display: block;
+            animation: arrowReverse 4000ms ease-in-out infinite;
+           
+        }
+
+        @keyframes arrowReverse {
+            0% {
+                width: 110%;
+                color: rgb(101, 240, 20);
+            }
+        
+            50% {
+                width: 50%;
+                color: rgb(101, 240, 20);
+            }
+        
+            100% {
+               width:  0%;
+               color: rgb(242, 255, 237);
+            }
+        }
+
+
+
+
+
+
+    }
+
+    &__formLogin {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        width: 40%;
+
+    }
+
 
 }
-
