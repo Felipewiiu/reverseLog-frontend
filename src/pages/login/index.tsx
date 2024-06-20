@@ -19,15 +19,15 @@ export default function Login() {
 
 
 
-    const t = http.post('/login', {
-      "login": email,
-      "senha": password
-    });
+    http.post('/login', {
+      'login': email,
+      'senha': password
+    })
       .then(() => {
         alert('Dados enviados com sucesso');
       });
 
-    console.log(t);
+  
 
   };
 
