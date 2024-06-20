@@ -1,0 +1,16 @@
+@import '/src/styles/base';
+
+.button {
+    padding-inline: 1.5rem;
+    padding-block: 0.7rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 0.1rem rgba(#333333, 0.15);
+    
+}
+
+.button:hover{
+    opacity: 90%;
+}
+

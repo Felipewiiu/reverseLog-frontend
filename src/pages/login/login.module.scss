@@ -27,6 +27,7 @@
             transition: all 1000ms;
             .arrow{
                 font-size: 3rem;
+
             }
 
         }
@@ -50,7 +51,7 @@
             }
         
             50% {
-                width: 50%;
+                width: 40%;
                 color: rgb(250, 234, 5);
             }
         
@@ -64,7 +65,7 @@
             content: '';
             
             height: 0.188rem;
-            margin-top: 0.9rem;
+            margin-bottom: 0.9rem;
             background-color: currentColor;
             display: block;
             animation: arrowReverse 4000ms ease-in-out infinite;
@@ -78,13 +79,14 @@
             }
         
             50% {
-                width: 50%;
+                width: 60%;
                 color: rgb(101, 240, 20);
             }
         
             100% {
                width:  0%;
                color: rgb(242, 255, 237);
+               transition: opacity 0.5s all;
             }
         }
 
@@ -102,6 +104,35 @@
         flex-direction: column;
         gap: 10px;
         width: 40%;
+
+        &__btn {
+            display: flex;
+            justify-content: space-between;
+            width: 18.75rem;
+            margin-top: 2rem;
+        }
+
+        &__span{
+            font-size: $fontSize-small;
+            margin-top: 1rem;
+            width: 18.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 1rem;
+           
+            &_element{
+                cursor: pointer;
+                color: blue;
+                text-decoration: underline;
+            }
+
+            &_element:hover{
+                color: rgb(98, 0, 255);
+            }
+
+
+        }
 
     }
 

@@ -17,14 +17,25 @@ export default function Login() {
 
       <div className={styles.container__screenAnimation}>
         <h1 className={styles.container__screenAnimation__title}>
-        ❮ Reverselog ❯
+          ❮ Smarthlog ❯
         </h1>
       </div>
 
       <div className={styles.container__formLogin}>
         <Input label={'E-mail'} type={'text'} placeholder={'Digite seu e-mail'} change={setEmail} />
-        <Input label={'Password'} type={'password'} placeholder={'Digite a sua senha'} change={setEmail} />
-        <Button value/>
+        <Input label={'Senha'} type={'password'} placeholder={'Digite a sua senha'} change={setEmail} />
+
+        <div className={styles.container__formLogin__btn}>
+          <Button name={'login'} type={'submit'} func={() => console.log('clicou')} background={'#3B82F6'} color={'#ffff'}/>
+          <Button name={'Cadastrar'} type={'submit'} func={() => console.log('clicou')} background={'#3B82F6'} color={'#ffff'} />
+        </div>
+
+        <div className={styles.container__formLogin__span}>
+          <span className={styles.container__formLogin__span_element}>Esqueci minha senha</span>
+          <span className={styles.container__formLogin__span_element} >Redefinir senha</span>
+        </div>
+
+
       </div>
 
     </section >
