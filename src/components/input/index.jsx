@@ -7,9 +7,10 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   change: PropTypes.func.isRequired,
+  value: PropTypes.string
 };
 
-export default function Input({ type, label, placeholder, change }) {
+export default function Input({ type, label, placeholder, change, value }) {
   return (
     <div className={Styles.container}>
       <label htmlFor="input">
@@ -21,6 +22,7 @@ export default function Input({ type, label, placeholder, change }) {
         placeholder={placeholder}
         onChange={event => change(event.target.value)}
         className={Styles.input}
+        value={value}
 
       />
     </div>

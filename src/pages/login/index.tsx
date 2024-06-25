@@ -25,15 +25,16 @@ export default function Login() {
     http.post('/login', user)
       .then((response) => {
         alert('Dados enviados com sucesso');
-        sessionStorage.setItem('token', response.data.tokenJWT );
-        
-        
+        sessionStorage.setItem('token', response.data.tokenJWT);
+        setEmail('');
+        setPassword('');
+
       })
-      .catch(error =>{
+      .catch(error => {
         console.log(error.message, error.code);
       });
 
-  
+
 
   };
 
@@ -48,8 +49,8 @@ export default function Login() {
       </div>
 
       <form className={styles.container__formLogin} >
-        <Input label={'E-mail'} type={'text'} placeholder={'Digite seu e-mail'} change={setEmail} />
-        <Input label={'Senha'} type={'password'} placeholder={'Digite a sua senha'} change={setPassword} />
+        <Input label={'E-mail'} type={'text'} placeholder={'Digite seu e-mail'} change={setEmail} value={email} />
+        <Input label={'Senha'} type={'password'} placeholder={'Digite a sua senha'} change={setPassword} value={password} />
 
         <div className={styles.container__formLogin__btn}>
           <Button name={'login'} type={'submit'} func={toSubmitForm} background={'#3B82F6'} color={'#ffff'} />
