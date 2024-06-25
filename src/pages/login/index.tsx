@@ -17,14 +17,20 @@ export default function Login() {
   const toSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-
-
-    http.post('/login', {
+    const user = {
       'login': email,
       'senha': password
-    })
-      .then(() => {
+    };
+
+    http.post('/login', user)
+      .then((response) => {
         alert('Dados enviados com sucesso');
+        sessionStorage.setItem('token', response.data.tokenJWT );
+        
+        
+      })
+      .catch(error =>{
+        console.log(error.message, error.code);
       });
 
   
