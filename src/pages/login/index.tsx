@@ -12,6 +12,7 @@ export default function Login() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [statusRequisition, setStatusRequisition] = useState('');
 
 
   const toSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -24,14 +25,14 @@ export default function Login() {
 
     http.post('/login', user)
       .then((response) => {
-        alert('Dados enviados com sucesso');
         sessionStorage.setItem('token', response.data.tokenJWT);
         setEmail('');
         setPassword('');
-
+        setStatusRequisition('Cliente logado com sucesso');
       })
       .catch(error => {
-        console.log(error.message, error.code);
+        setStatusRequisition(error.message);
+
       });
 
 

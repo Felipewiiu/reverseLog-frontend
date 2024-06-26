@@ -3,6 +3,7 @@ import Login from 'pages/login';
 import DefaultPage from 'components/DefaultPage';
 import { useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
+import Home from 'pages/home';
 
 
 
@@ -20,7 +21,7 @@ export default function AppRoutes() {
 
         <Routes>
           <Route path='/' element={<Login />} />
-
+          <Route path='/home' element={<Home/>}/>
 
         </Routes>
       </Router>
