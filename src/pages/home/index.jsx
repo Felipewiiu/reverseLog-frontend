@@ -33,7 +33,7 @@ export default function Home() {
 
         <div className={styles.container__template__main}>
           <header>
-            <Input type={'text'} placeholder={'Serach'} change={setSearch} value={search} />
+            <Input type={'text'} placeholder={'Serach'} change={setSearch} value={search} valueWidh={'500px'} borderRadiusValue={'12px'}/>
 
             <span>
               <MenssageIcon style={{ cursor: 'pointer' }} />
