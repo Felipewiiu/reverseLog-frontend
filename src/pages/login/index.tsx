@@ -47,6 +47,7 @@ export default function Login() {
         <h1 className={styles.container__screenAnimation__title}>
           ❮ Smartlog ❯
         </h1>
+  
       </div>
 
       <form className={styles.container__formLogin} >

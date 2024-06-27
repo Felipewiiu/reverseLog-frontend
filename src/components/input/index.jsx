@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 Input.propTypes = {
   type: PropTypes.string,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   placeholder: PropTypes.string,
   change: PropTypes.func.isRequired,
   value: PropTypes.string

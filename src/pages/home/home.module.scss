@@ -1,3 +1,5 @@
+@import '/src/styles//base';
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -9,24 +11,62 @@
     &__template{
         width: 80%;
         height: 90%;
-        background-color: aliceblue;
+       
         border-radius: 15px;
         border: 0.5px solid #1d1d1d66;
         display: flex;
 
 
         &__aside{
-            width: 15%;
-            height: 70%;
+            width: 12rem;
+            height: 80%;
             // background-color: rebeccapurple;
+            padding-left: 1.5rem;
             margin-top: 5rem;
             border-right: 1px solid rgba(42, 42, 42, 0.648);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 1;
+            flex-grow: 1;
+            align-items: self-start;
+
+            &__box{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin-top: 3rem;
+                width: calc(100% - 1rem);
+                height:14rem;
+
+                li {
+                    padding: 0.5rem;
+                    display: flex;
+                    align-items: center;
+                    list-style-type: none;
+                    transition: all 300ms;
+                    border-radius: 5px;
+                    color: $text-color;
+                    font-weight: 300;
+                    cursor: pointer;
+                    span {
+                        padding-right: 1rem;
+                        
+                    }
+                }
+
+                li:hover{
+                    background-color: rgba(71, 96, 107, 0.144);
+                }
+            }
         }
 
         &__main{
             display: flex;
             width: 85%;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
            
             &__image{
                 background-image: url('../../assets/Ellipse\ 1.png');
@@ -34,6 +74,51 @@
                 width: 50px;
                 height: 50px;
             }
+
+            &__boxContainer{
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+               margin-left: 5rem;
+                width: 100%;
+                height: 25rem;
+                margin-top: 5rem;
+
+                p {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                
+
+                &__dashborad{
+                    margin-top: 1rem;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 90%;
+                    height: 20rem;
+                    border-radius: 10px;
+                    border: solid 0.5px rgba(48, 48, 48, 0.418);
+                    
+                   span {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                    transition: all 100ms;
+                   }
+    
+                   span:hover {
+                    transform: scale(1.2);
+                    
+    
+                   }
+                }
+            }
+
+            
         }
 
         &__main header{
@@ -49,13 +134,21 @@
             span {
                 margin-top: 1rem;
                 display: flex;
+                justify-content: end;
+                flex-grow: 1;
                 align-items: center;
-                justify-content: space-around;
+                gap: 1rem;
                 width: 10rem;
                 height: 4rem;
+
                 
             }
+            
         }
+
+       
+
+        
     }
     
 }
