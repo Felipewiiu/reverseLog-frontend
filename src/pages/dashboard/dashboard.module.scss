@@ -1,0 +1,45 @@
+.container{
+    margin-top: 5rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: calc(100% - 2rem);
+    height: 25rem;
+    
+    
+    p {
+        display: flex;
+        align-items: flex-end;
+        gap: 1rem;
+        
+    }
+    
+
+    &__dashborad{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        height: 20rem;
+        border-radius: 10px;
+        border: solid 0.5px rgba(48, 48, 48, 0.418);
+        
+        
+       span {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: all 100ms;
+       }
+
+       span:hover {
+        transform: scale(1.2);
+        
+
+       }
+    }
+}

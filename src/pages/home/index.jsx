@@ -7,9 +7,7 @@ import { ReactComponent as HomeIcon } from '../../assets/home.svg';
 import { ReactComponent as ContractIcon } from '../../assets/contract.svg';
 import { ReactComponent as Suport } from '../../assets/suport.svg';
 import { ReactComponent as RequestIcon } from '../../assets/description.svg';
-import { ReactComponent as RequestRma } from '../../assets/solicitacoes.svg';
-import { ReactComponent as Progress } from '../../assets/andamento.svg';
-import { ReactComponent as Finished } from '../../assets/finalizado.svg';
+import { Outlet } from 'react-router-dom';
 
 
 export default function Home() {
@@ -43,25 +41,8 @@ export default function Home() {
 
           </header>
 
-
           <div className={styles.container__template__main__boxContainer}>
-            <p><HomeIcon/>Dashboard</p>
-            <div className={styles.container__template__main__boxContainer__dashborad}>
-              <span>
-                <RequestRma />
-                <p>Solicitações</p>
-              </span>
-
-              <span>
-                <Progress />
-                <p>Andamento</p>
-              </span>
-
-              <span>
-                <Finished />
-                <p>Finalizado</p>
-              </span>
-            </div>
+            <Outlet/>
           </div>
 
         </div>

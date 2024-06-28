@@ -3,40 +3,40 @@
 .container {
     width: 100vw;
     height: 100vh;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    &__template{
+    &__template {
         width: 80%;
         height: 90%;
-       
+
         border-radius: 15px;
         border: 0.5px solid #1d1d1d66;
         display: flex;
 
 
-        &__aside{
+        &__aside {
             width: 12rem;
             height: 80%;
             // background-color: rebeccapurple;
             padding-left: 1.5rem;
             margin-top: 5rem;
-            border-right: 1px solid rgba(42, 42, 42, 0.648);
+            border-right: 1px solid rgba(42, 42, 42, 0.411);
             display: flex;
             flex-direction: column;
             flex-shrink: 1;
             flex-grow: 1;
             align-items: self-start;
 
-            &__box{
+            &__box {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
                 margin-top: 3rem;
                 width: calc(100% - 1rem);
-                height:14rem;
+                height: 14rem;
 
                 li {
                     padding: 0.5rem;
@@ -48,80 +48,46 @@
                     color: $text-color;
                     font-weight: 300;
                     cursor: pointer;
+
                     span {
                         padding-right: 1rem;
-                        
+
                     }
                 }
 
-                li:hover{
+                li:hover {
                     background-color: rgba(71, 96, 107, 0.144);
                 }
             }
         }
 
-        &__main{
+        &__main {
             display: flex;
             width: 85%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-           
-            &__image{
+
+            &__image {
                 background-image: url('../../assets/Ellipse\ 1.png');
                 background-size: cover;
                 width: 50px;
                 height: 50px;
             }
 
-            &__boxContainer{
-                display: flex;
-                align-items: start;
-                flex-direction: column;
-               margin-left: 5rem;
+            &__boxContainer {
                 width: 100%;
                 height: 25rem;
-                margin-top: 5rem;
+                display: flex;
+                flex-grow: 1;
 
-                p {
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-                }
-                
 
-                &__dashborad{
-                    margin-top: 1rem;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    width: 90%;
-                    height: 20rem;
-                    border-radius: 10px;
-                    border: solid 0.5px rgba(48, 48, 48, 0.418);
-                    box-shadow: 1px 3px 7px rgba(78, 78, 78, 0.438);
-                   span {
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    cursor: pointer;
-                    transition: all 100ms;
-                   }
-    
-                   span:hover {
-                    transform: scale(1.2);
-                    
-    
-                   }
-                }
             }
 
-            
         }
 
-        &__main header{
+        &__main header {
             margin-top: 1rem;
             justify-content: space-between;
             padding-inline: 3rem;
@@ -129,7 +95,7 @@
             align-items: center;
             width: 100%;
             height: 4rem;
-            
+
 
             span {
                 margin-top: 1rem;
@@ -140,14 +106,14 @@
                 gap: 1rem;
                 width: 10rem;
                 height: 4rem;
-                
+
             }
-            
+
         }
 
-       
 
-        
+
+
     }
-    
+
 }
