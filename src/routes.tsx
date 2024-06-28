@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import Home from 'pages/home';
 import Dashboard from 'pages/dashboard';
+import Register from 'pages/register';
 
 
 
@@ -24,6 +25,7 @@ export default function AppRoutes() {
 
           <Route path='/home' element={<Home/>}>
             <Route index element={<Dashboard/>}/>
+            <Route path='/home/cadastro' element={<Register/>}/>
           </Route>
 
         </Routes>
