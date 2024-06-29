@@ -9,7 +9,7 @@
     align-items: center;
 
     &__template {
-        width: 80%;
+        width: 90%;
         height: 90%;
 
         border-radius: 15px;
@@ -38,6 +38,11 @@
                 width: calc(100% - 1rem);
                 height: 14rem;
 
+                .Link {
+                    text-decoration: none;
+                    color: $text-color;
+                }
+
                 li {
                     padding: 0.5rem;
                     display: flex;
@@ -47,12 +52,14 @@
                     border-radius: 5px;
                     color: $text-color;
                     font-weight: 300;
+                    text-decoration: none;
                     cursor: pointer;
 
                     span {
                         padding-right: 1rem;
 
                     }
+
                 }
 
                 li:hover {
