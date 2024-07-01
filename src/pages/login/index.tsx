@@ -5,6 +5,8 @@ import { ThemeContext } from 'context/themeContext';
 import classNames from 'classnames';
 import Button from 'components/button';
 import http from 'HTTP';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -12,7 +14,8 @@ export default function Login() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [statusRequisition, setStatusRequisition] = useState('');
+  const navigate = useNavigate();
+  
 
 
   const toSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
@@ -28,14 +31,13 @@ export default function Login() {
         sessionStorage.setItem('token', response.data.tokenJWT);
         setEmail('');
         setPassword('');
-        setStatusRequisition('Cliente logado com sucesso');
+        navigate('/home');
+
       })
       .catch(error => {
-        setStatusRequisition(error.message);
+        alert('Não foi possível fazer o seu login:  ' + error.message);
 
       });
-
-
 
   };
 
@@ -47,7 +49,7 @@ export default function Login() {
         <h1 className={styles.container__screenAnimation__title}>
           ❮ Smartlog ❯
         </h1>
-  
+
       </div>
 
       <form className={styles.container__formLogin} >
