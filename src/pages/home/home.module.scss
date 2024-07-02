@@ -43,6 +43,10 @@
                     color: $text-color;
                 }
 
+                .itemLabel--active{
+                    background-color: rgba(71, 96, 107, 0.144);
+                }
+
                 li {
                     padding: 0.5rem;
                     display: flex;

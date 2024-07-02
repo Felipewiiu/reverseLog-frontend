@@ -7,13 +7,15 @@ import { ReactComponent as HomeIcon } from '../../assets/home.svg';
 import { ReactComponent as ContractIcon } from '../../assets/contract.svg';
 import { ReactComponent as Suport } from '../../assets/suport.svg';
 import { ReactComponent as RequestIcon } from '../../assets/description.svg';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 
 
 export default function Home() {
 
   const [search, setSearch] = useState('');
-  console.log(search);
+  const location = useLocation();
+  console.log(location.pathname);
 
 
   return (
@@ -23,7 +25,8 @@ export default function Home() {
           <Smartlog />
           <ul className={styles.container__template__aside__box}>
             <Link to={'/home'} className={styles.Link}>
-              <li>
+              <li className={classNames({[styles['itemLabel--active']]: location.pathname === '/home' ? true : false
+              })}>
                 <span>
                   <HomeIcon />
                 </span>
@@ -33,7 +36,8 @@ export default function Home() {
             </Link>
 
             <Link to={'/home/cadastro'} className={styles.Link}>
-              <li>
+              <li className={classNames({[styles['itemLabel--active']]: location.pathname === '/home/cadastro' ? true : false
+              })}>
                 <span>
                   <ContractIcon />
                 </span>
