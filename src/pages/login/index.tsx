@@ -17,7 +17,6 @@ export default function Login() {
   const navigate = useNavigate();
   
 
-
   const toSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -57,7 +56,7 @@ export default function Login() {
         <Input label={'Senha'} type={'password'} placeholder={'Digite a sua senha'} change={setPassword} value={password} />
 
         <div className={styles.container__formLogin__btn}>
-          <Button name={'login'} type={'submit'} func={toSubmitForm} background={'#3B82F6'} color={'#ffff'} />
+          <Button name={'Login'} type={'submit'} func={toSubmitForm} background={'#3B82F6'} color={'#ffff'} />
           <Button name={'Cadastrar'} type={'submit'} func={() => console.log('clicou')} background={'#3B82F6'} color={'#ffff'} />
         </div>
 

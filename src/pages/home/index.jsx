@@ -9,14 +9,19 @@ import { ReactComponent as Suport } from '../../assets/suport.svg';
 import { ReactComponent as RequestIcon } from '../../assets/description.svg';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
+import parseJwt from 'security/securityValidationId';
 
 
 export default function Home() {
 
   const [search, setSearch] = useState('');
   const location = useLocation();
-  console.log(location.pathname);
+  const token = sessionStorage.getItem('token');
+  const decodedToken = parseJwt(token);
 
+  if(decodedToken?.sub == null){
+    return <h1>Autenticação necesária!</h1>;
+  }
 
   return (
     <div className={styles.container}>
@@ -25,7 +30,8 @@ export default function Home() {
           <Smartlog />
           <ul className={styles.container__template__aside__box}>
             <Link to={'/home'} className={styles.Link}>
-              <li className={classNames({[styles['itemLabel--active']]: location.pathname === '/home' ? true : false
+              <li className={classNames({
+                [styles['itemLabel--active']]: location.pathname === '/home' ? true : false
               })}>
                 <span>
                   <HomeIcon />
@@ -36,7 +42,8 @@ export default function Home() {
             </Link>
 
             <Link to={'/home/cadastro'} className={styles.Link}>
-              <li className={classNames({[styles['itemLabel--active']]: location.pathname === '/home/cadastro' ? true : false
+              <li className={classNames({
+                [styles['itemLabel--active']]: location.pathname === '/home/cadastro' ? true : false
               })}>
                 <span>
                   <ContractIcon />
