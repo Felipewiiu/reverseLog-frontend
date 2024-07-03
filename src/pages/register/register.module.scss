@@ -1,3 +1,5 @@
+@import '../../styles/base.scss';
+
 .container {
     display: flex;
     justify-content: center;
@@ -8,7 +10,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(50, 51, 56, 0.603);
-
+    transition: all 1000ms;
 
     &__template {
         display: flex;
@@ -20,6 +22,15 @@
         background-color: #fdfdfd;
         overflow-y: scroll;
         
+        &__close{
+            width: 100%;
+            height: 5rem;
+            background-color: $title-background;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding: 2rem;
+        }
 
         &__box{
             
@@ -59,4 +70,8 @@
 
 
     }
+}
+
+.container--close{
+    display: none;
 }

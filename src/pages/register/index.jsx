@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './register.module.scss';
 import Input from 'components/input';
 import Button from 'components/button';
+import { ReactComponent as Close } from '../../assets/close.svg';
+import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
 
+  const[open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const closeTable = () => {
+    setOpen(true);
+    navigate('/home');
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={classNames({
+      [styles.container]:true,
+      [styles['container--close']]: open === true ? true : false
+    })}>
 
       <div className={styles.container__template}>
+        <div className={styles.container__template__close}>
+          <Close onClick={closeTable} style={{cursor:'pointer'}}/>
 
+        </div>
         <div className={styles.container__template__box}>
           <div className={styles.container__template__box__title}>
-            
+
             <p>Atualização de cadastro</p>
           </div>
 
@@ -38,7 +55,7 @@ export default function Register() {
 
           </form>
           <div className={styles.container__template__box__btn}>
-            <Button name={'Enviar'} type={'submit'} background={'#3B82F6'} color={'#ffff'} />
+            <Button name={'Enviar'} type={'submit'} background={'rgb(0, 140, 255)'} color={'#ffff'} />
           </div>
         </div>
 
