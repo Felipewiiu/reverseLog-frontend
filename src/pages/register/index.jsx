@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
 
-  const[open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const closeTable = () => {
@@ -18,13 +18,16 @@ export default function Register() {
 
   return (
     <div className={classNames({
-      [styles.container]:true,
+      [styles.container]: true,
       [styles['container--close']]: open === true ? true : false
     })}>
 
       <div className={styles.container__template}>
         <div className={styles.container__template__close}>
-          <Close onClick={closeTable} style={{cursor:'pointer'}}/>
+          
+          <Close onClick={closeTable} style={{ cursor: 'pointer' }} className={styles.btnX} />
+
+          
 
         </div>
         <div className={styles.container__template__box}>
@@ -55,7 +58,9 @@ export default function Register() {
 
           </form>
           <div className={styles.container__template__box__btn}>
+
             <Button name={'Enviar'} type={'submit'} background={'rgb(0, 140, 255)'} color={'#ffff'} />
+
           </div>
         </div>
 

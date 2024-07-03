@@ -30,6 +30,16 @@
             justify-content: end;
             align-items: center;
             padding: 2rem;
+            
+            .btnX {
+                transform: rotate(-90deg);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .btnX:hover{
+                transform: rotate(90deg);
+                
+            }
         }
 
         &__box{
@@ -44,7 +54,7 @@
             &__title{
                 display: flex;
                 align-items: center;
-                margin-top: 6em;
+                margin-top: 2rem;
                 margin-bottom: 4rem;
               
                 width: 100%;
