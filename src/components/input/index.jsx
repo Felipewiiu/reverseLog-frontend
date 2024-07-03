@@ -9,10 +9,11 @@ Input.propTypes = {
   change: PropTypes.func.isRequired,
   value: PropTypes.string,
   valueWidh: PropTypes.string,
-  borderRadiusValue: PropTypes.string
+  borderRadiusValue: PropTypes.string,
+  marginBotton: PropTypes.string
 };
 
-export default function Input({ type, label, placeholder, change, value, valueWidh, borderRadiusValue }) {
+export default function Input({ type, label, placeholder, change, value, valueWidh, borderRadiusValue, marginBotton }) {
   return (
     <div className={Styles.container}>
       <label htmlFor="input">
@@ -25,7 +26,7 @@ export default function Input({ type, label, placeholder, change, value, valueWi
         onChange={event => change(event.target.value)}
         className={Styles.input}
         value={value}
-        style={{width: valueWidh, borderRadius: borderRadiusValue}}
+        style={{width: valueWidh, borderRadius: borderRadiusValue, marginBottom: marginBotton}}
 
       />
     </div>

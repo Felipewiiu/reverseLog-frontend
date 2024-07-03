@@ -18,9 +18,9 @@ export default function Home() {
   const location = useLocation();
   const token = sessionStorage.getItem('token');
   const decodedToken = parseJwt(token);
-
+  
   if(decodedToken?.sub == null){
-    return <h1>Autenticação necesária!</h1>;
+    return <h1>Autenticação necessária!</h1>;
   }
 
   return (
