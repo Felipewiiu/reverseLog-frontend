@@ -13,19 +13,19 @@ export default function Register() {
 
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [cnpj, setCnpj] = useState('');
-  const [publicPlace, setPublicPlace] = useState('');
-  const [neighborhood, setNeighborhood] = useState('');
-  const [cep, setCep] = useState('');
-  const [number, setNumber] = useState('');
-  const [complement, setComplement] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [password, setPassword] = useState();
+  const [cpf, setCpf] = useState();
+  const [cnpj, setCnpj] = useState();
+  const [publicPlace, setPublicPlace] = useState();
+  const [neighborhood, setNeighborhood] = useState();
+  const [cep, setCep] = useState();
+  const [number, setNumber] = useState();
+  const [complement, setComplement] = useState();
+  const [city, setCity] = useState();
+  const [uf, setUf] = useState();
 
   const emailVerify = parseJwt(sessionStorage.getItem('token'));
   console.log(emailVerify.sub);
