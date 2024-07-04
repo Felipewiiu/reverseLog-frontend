@@ -1,3 +1,3 @@
-export  const routesApi = {
-    register: "clientes/post"
+export const routesApi = {
+    register: "clientes/update-custumer"
 }
