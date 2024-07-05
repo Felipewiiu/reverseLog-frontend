@@ -41,7 +41,7 @@ export default function Register() {
         'numero': number,
         'complemento': complement,
         'cidade': city,
-        'uf': uf,
+        'uf': uf
       },
       'name': name
 
