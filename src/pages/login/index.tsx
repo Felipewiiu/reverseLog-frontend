@@ -35,7 +35,7 @@ export default function Login() {
 
       })
       .catch(error => {
-        alert('Não foi possível fazer o seu login:  ' + error.message);
+        console.log('Não foi possível fazer o seu login:  ' + error.message);
 
       });
 
