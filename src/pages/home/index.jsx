@@ -7,7 +7,8 @@ import { ReactComponent as HomeIcon } from '../../assets/home.svg';
 import { ReactComponent as ContractIcon } from '../../assets/contract.svg';
 import { ReactComponent as Suport } from '../../assets/suport.svg';
 import { ReactComponent as RequestIcon } from '../../assets/description.svg';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import {ReactComponent as Logout } from '../../assets/logout.svg';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import parseJwt from 'security/securityValidationId';
 
@@ -18,6 +19,13 @@ export default function Home() {
   const location = useLocation();
   const token = sessionStorage.getItem('token');
   const decodedToken = parseJwt(token);
+  const navigate = useNavigate();
+
+
+  const logout = () => {
+    navigate('/');
+    sessionStorage.removeItem('token');
+  };
   
   if(decodedToken?.sub == null){
     return <h1>Autenticação necessária!</h1>;
@@ -63,6 +71,12 @@ export default function Home() {
                 <Suport />
               </span>
               Fale conosco
+            </li>
+            <li onClick={logout}>
+              <span>
+                <Logout />
+              </span>
+              Sair
             </li>
           </ul>
         </aside>
