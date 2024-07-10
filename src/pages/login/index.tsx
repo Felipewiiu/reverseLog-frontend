@@ -53,8 +53,8 @@ export default function Login() {
       </div>
 
       <form className={styles.container__formLogin} >
-        <Input label={'E-mail'} type={'text'} placeholder={'Digite seu e-mail'} change={setEmail} value={email} />
-        <Input label={'Senha'} type={'password'} placeholder={'Digite a sua senha'} change={setPassword} value={password} />
+        <Input label={'E-mail'} type={'text'} placeholder={'Digite seu e-mail'} change={setEmail} value={email} bottom={'10px'} />
+        <Input label={'Senha'} type={'password'} placeholder={'Digite a sua senha'} change={setPassword} value={password} bottom={'10px'} />
 
         <div className={styles.container__formLogin__btn}>
           <Button name={'Login'} type={'submit'} func={toSubmitForm} background={'#3B82F6'} color={'#ffff'} />

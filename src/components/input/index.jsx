@@ -10,13 +10,14 @@ Input.propTypes = {
   value: PropTypes.string,
   valueWidh: PropTypes.string,
   borderRadiusValue: PropTypes.string,
-  marginBotton: PropTypes.string
+  marginBotton: PropTypes.string,
+  bottom: PropTypes.string
 };
 
-export default function Input({ type, label, placeholder, change, value, valueWidh, borderRadiusValue, marginBotton }) {
+export default function Input({ type, label, placeholder, change, value, valueWidh, borderRadiusValue, marginBotton, bottom }) {
   return (
     <div className={Styles.container}>
-      <label htmlFor="input">
+      <label htmlFor="input" style={{marginBottom: bottom}}>
         {label}
       </label>
       <input

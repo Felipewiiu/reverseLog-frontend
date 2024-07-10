@@ -9,75 +9,13 @@
     align-items: center;
 
     &__template {
-        width: 90%;
-        height: 90%;
-
-        border-radius: 15px;
-        border: 0.5px solid #1d1d1d66;
+        width: 100%;
+        height: 100%;
         display: flex;
-
-
-        &__aside {
-            width: 12rem;
-            height: 80%;
-            // background-color: rebeccapurple;
-            padding-left: 1.5rem;
-            margin-top: 5rem;
-            border-right: 1px solid rgba(42, 42, 42, 0.411);
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 1;
-            flex-grow: 1;
-            align-items: self-start;
-
-            &__box {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                margin-top: 3rem;
-                padding-top: 5rem;
-                width: calc(100% - 1rem);
-                height: 14rem;
-
-                .Link {
-                    text-decoration: none;
-                    color: $text-color;
-                }
-
-                .itemLabel--active{
-                    background-color: rgba(71, 96, 107, 0.144);
-                }
-
-                li {
-                    padding: 0.5rem;
-                    display: flex;
-                    align-items: center;
-                    list-style-type: none;
-                    transition: all 300ms;
-                    border-radius: 5px;
-                    color: $text-color;
-                    font-weight: 300;
-                    text-decoration: none;
-                    
-                    margin-bottom: 1rem;
-                    cursor: pointer;
-
-                    span {
-                        padding-right: 1rem;
-
-                    }
-
-                }
-
-                li:hover {
-                    background-color: rgba(71, 96, 107, 0.144);
-                }
-            }
-        }
 
         &__main {
             display: flex;
-            width: 85%;
+            width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -95,24 +33,81 @@
                 height: 25rem;
                 display: flex;
                 flex-grow: 1;
+                // background-color: aqua;
 
-
+                &__aside {
+                    width: 16rem;
+                    height: 100%;
+                    // background-color: #f5a328;
+                    padding-left: 1.5rem;
+                    border-right: 1px solid rgba(42, 42, 42, 0.411);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: self-start;
+                    // background-color: #0856CA;
+        
+                    &__box {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        padding-top: 3rem;
+                        width: calc(100% - 1rem);
+                        height: 14rem;
+        
+                        .Link {
+                            text-decoration: none;
+                            color: $text-color;
+                        }
+        
+                        .itemLabel--active{
+                            background-color: rgba(71, 96, 107, 0.144);
+                        }
+        
+                        li {
+                            padding: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            list-style-type: none;
+                            transition: all 300ms;
+                            border-radius: 5px;
+                            color: $text-color;
+                            font-weight: 300;
+                            text-decoration: none;
+                            
+                            margin-bottom: 1rem;
+                            cursor: pointer;
+        
+                            span {
+                                padding-right: 1rem;
+        
+                            }
+        
+                        }
+        
+                        li:hover {
+                            background-color: rgba(71, 96, 107, 0.144);
+                        }
+                    }
+                }
             }
 
         }
 
         &__main header {
-            margin-top: 1rem;
             justify-content: space-between;
             padding-inline: 3rem;
             display: flex;
             align-items: center;
             width: 100%;
-            height: 4rem;
+            height: 5em;
+            background-color: #0856CA;
+
+            h1 {
+                margin-right: 5rem;
+            }
 
 
             span {
-                margin-top: 1rem;
                 display: flex;
                 justify-content: end;
                 flex-grow: 1;

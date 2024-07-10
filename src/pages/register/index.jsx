@@ -83,19 +83,19 @@ export default function Register() {
 
           <form className={styles.container__template__box__form} id='formUpdate'>
             <div >
-              <Input label={'Nome'} marginBotton={'1rem'} change={setName} placeholder={'Digite o seu nome'} />
-              <Input label={'Telefone'} marginBotton={'1rem'} change={setPhone} placeholder={'Digite o seu telefone'} />
-              <Input label={'CNPJ'} marginBotton={'1rem'} change={setCnpj} placeholder={'Digite o seu CNPJ'} />
-              <Input label={'UF'} marginBotton={'1rem'} change={setUf} placeholder={'Digite o seu distrito'} />
-              <Input label={'Logradouro'} marginBotton={'1rem'} change={setPublicPlace} placeholder={'Digite o seu logradouro'} />
+              <Input label={'Nome'} marginBotton={'1rem'} change={setName} placeholder={'Digite o seu nome'} bottom={'10px'} />
+              <Input label={'Telefone'} marginBotton={'1rem'} change={setPhone} placeholder={'Digite o seu telefone'} bottom={'10px'} />
+              <Input label={'CNPJ'} marginBotton={'1rem'} change={setCnpj} placeholder={'Digite o seu CNPJ'} bottom={'10px'} />
+              <Input label={'UF'} marginBotton={'1rem'} change={setUf} placeholder={'Digite o seu distrito'} bottom={'10px'} />
+              <Input label={'Logradouro'} marginBotton={'1rem'} change={setPublicPlace} placeholder={'Digite o seu logradouro'} bottom={'10px'} />
 
             </div>
             <div  >
-              <Input label={'Bairro'} marginBotton={'1rem'} change={setNeighborhood} placeholder={'Digite o seu bairro'} />
-              <Input label={'CEP'} marginBotton={'1rem'} change={setCep} placeholder={'Digite o seu CEP'} />
-              <Input label={'Número'} marginBotton={'1rem'} change={setNumber} placeholder={'Digite o seu número'} />
-              <Input label={'Complemento'} marginBotton={'1rem'} change={setComplement} placeholder={'Digite o seu complemento'} />
-              <Input label={'Cidade'} marginBotton={'1rem'} change={setCity} placeholder={'Digite a sua cidade'} />
+              <Input label={'Bairro'} marginBotton={'1rem'} change={setNeighborhood} placeholder={'Digite o seu bairro'} bottom={'10px'} />
+              <Input label={'CEP'} marginBotton={'1rem'} change={setCep} placeholder={'Digite o seu CEP'} bottom={'10px'} />
+              <Input label={'Número'} marginBotton={'1rem'} change={setNumber} placeholder={'Digite o seu número'} bottom={'10px'} />
+              <Input label={'Complemento'} marginBotton={'1rem'} change={setComplement} placeholder={'Digite o seu complemento'} bottom={'10px'} />
+              <Input label={'Cidade'} marginBotton={'1rem'} change={setCity} placeholder={'Digite a sua cidade'} bottom={'10px'} />
 
             </div>
 
