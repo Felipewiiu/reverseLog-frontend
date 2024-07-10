@@ -82,7 +82,7 @@ export default function Register() {
           </div>
 
           <form className={styles.container__template__box__form} id='formUpdate'>
-            <div >
+            <div>
               <Input label={'Nome'} marginBotton={'1rem'} change={setName} placeholder={'Digite o seu nome'} bottom={'10px'} />
               <Input label={'Telefone'} marginBotton={'1rem'} change={setPhone} placeholder={'Digite o seu telefone'} bottom={'10px'} />
               <Input label={'CNPJ'} marginBotton={'1rem'} change={setCnpj} placeholder={'Digite o seu CNPJ'} bottom={'10px'} />
