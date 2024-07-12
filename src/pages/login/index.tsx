@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import classNames from 'classnames';
 import Button from 'components/button';
-import http from 'HTTP';
+import useHttp from 'HTTP';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -15,6 +15,8 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const http = useHttp();
+
   
   const register = () => navigate('/home/cadastro');
 

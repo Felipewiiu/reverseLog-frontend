@@ -5,7 +5,7 @@ import Button from 'components/button';
 import { ReactComponent as Close } from '../../assets/close.svg';
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
-import http from 'HTTP';
+import useHttp from 'HTTP';
 import parseJwt from '../../security/securityValidationId';
 
 
@@ -23,6 +23,7 @@ export default function Register() {
   const [complement, setComplement] = useState();
   const [city, setCity] = useState();
   const [uf, setUf] = useState();
+  const http = useHttp();
 
   const emailVerify = parseJwt(sessionStorage.getItem('token'));
   
@@ -51,8 +52,7 @@ export default function Register() {
       })
       .catch(error => {
         console.log(sessionStorage.getItem('token'));
-        console.log('error: ' + error);
-        console.log(emailVerify.sub);
+        
       });
 
 

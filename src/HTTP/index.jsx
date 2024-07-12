@@ -1,14 +1,24 @@
 import axios from 'axios';
-
-const http = axios.create({
-  baseURL: 'http://localhost:8080/'
-});
-
-const token = sessionStorage.getItem('token');
-
-token != null ? http.defaults.headers.common['Authorization'] = `Bearer ${token}` : '';
+import { useEffect, useState } from 'react';
 
 
+const useHttp = () => {
+
+  const instanse = axios.create({
+    baseURL: 'http://localhost:8080/'
+  });
+
+  useEffect(() =>{
+    
+    const token = sessionStorage.getItem('token');
+    
+    token != null ? instanse.defaults.headers.common['Authorization'] = `Bearer ${token}` : '';
+    
+  });
+
+  return instanse;
+};
 
 
-export default http;
+
+export default useHttp;
