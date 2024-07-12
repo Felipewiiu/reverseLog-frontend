@@ -1,0 +1,28 @@
+@import '../../styles//base';
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16rem;
+    height: 4rem;
+    background-color: #3B82F6;
+    z-index: 10;
+    position: absolute;
+    border-left: solid 10px rgb(101, 245, 18);
+    top: 0px;
+    right: 0px;
+    transition: all 700ms ease-in-out;
+    transform: translateX(800px);
+
+    p {
+        margin-left: 1rem;
+        color: rgb(243, 243, 243);
+        font-weight: 500;
+    }
+
+    &--active {
+        background-color: #3B82F6;
+        transform: translateX(0px);
+    }
+}

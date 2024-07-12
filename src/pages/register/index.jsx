@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import useHttp from 'HTTP';
 import parseJwt from '../../security/securityValidationId';
+import Toast from 'components/toast';
 
 
 
@@ -27,8 +28,9 @@ export default function Register() {
   const navigate = useNavigate();
   const emailVerify = parseJwt(sessionStorage.getItem('token'));
   const http = useHttp();
+  const [updateSucefull, setUpdateSucefull] = useState(false);
 
-  const submit = (event: React.FormEvent<HTMLFormElement>) => {
+  const submit = (event) => {
     event.preventDefault();
 
     const payload = {
@@ -51,6 +53,8 @@ export default function Register() {
       .then((response) => {
         console.log('Cadastro atualizado');
         reloadData();
+        setUpdateSucefull(true);
+
       })
       .catch(error => {
         console.log(sessionStorage.getItem('token'));
@@ -59,12 +63,12 @@ export default function Register() {
 
   };
 
-  const reloadData = () =>{
+  const reloadData = () => {
     http.get(`clientes/get-email?email=${emailVerify.sub}`)
       .then(response => {
 
         const data = response.data;
-        
+
         setName(data.name);
 
         setPhone(data.telefone);
@@ -107,6 +111,7 @@ export default function Register() {
       [styles.container]: true,
       [styles['container--close']]: open === true ? true : false
     })}>
+      <Toast active={updateSucefull} />;
 
       <div className={styles.container__template__close}>
         <Close onClick={closeTable} style={{ cursor: 'pointer' }} className={styles.btnX} />
