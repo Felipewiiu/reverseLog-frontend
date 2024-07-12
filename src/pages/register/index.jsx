@@ -25,9 +25,7 @@ export default function Register() {
   const [uf, setUf] = useState();
 
   const emailVerify = parseJwt(sessionStorage.getItem('token'));
-  console.log(emailVerify.sub);
-  console.log(sessionStorage.getItem('token'));
-
+  
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -49,10 +47,12 @@ export default function Register() {
 
     http.put(`clientes/update-custumer?email=${emailVerify.sub}`, payload)
       .then((response) => {
-        console.log(response);
+        console.log('Cadastro atualizado');
       })
       .catch(error => {
-        alert('error: ' + error);
+        console.log(sessionStorage.getItem('token'));
+        console.log('error: ' + error);
+        console.log(emailVerify.sub);
       });
 
 
