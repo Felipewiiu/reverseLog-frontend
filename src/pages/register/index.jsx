@@ -28,7 +28,8 @@ export default function Register() {
   const navigate = useNavigate();
   const emailVerify = parseJwt(sessionStorage.getItem('token'));
   const http = useHttp();
-  const [updateSucefull, setUpdateSucefull] = useState(false);
+  const [updateOk, setUpdateOk] = useState(false);
+
 
   const submit = (event) => {
     event.preventDefault();
@@ -53,7 +54,7 @@ export default function Register() {
       .then((response) => {
         console.log('Cadastro atualizado');
         reloadData();
-        setUpdateSucefull(true);
+        setUpdateOk(true);
 
       })
       .catch(error => {
@@ -111,7 +112,7 @@ export default function Register() {
       [styles.container]: true,
       [styles['container--close']]: open === true ? true : false
     })}>
-      <Toast active={updateSucefull} />;
+      {updateOk == true ? <Toast /> : setTimeout(() => setUpdateOk(false), 5000)}
 
       <div className={styles.container__template__close}>
         <Close onClick={closeTable} style={{ cursor: 'pointer' }} className={styles.btnX} />
