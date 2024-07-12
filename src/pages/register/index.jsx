@@ -30,6 +30,7 @@ export default function Register() {
   const http = useHttp();
   const [updateOk, setUpdateOk] = useState(false);
 
+  
 
   const submit = (event) => {
     event.preventDefault();
@@ -55,6 +56,7 @@ export default function Register() {
         console.log('Cadastro atualizado');
         reloadData();
         setUpdateOk(true);
+        setTimeout(() => setUpdateOk(false), 5000);
 
       })
       .catch(error => {
@@ -112,7 +114,7 @@ export default function Register() {
       [styles.container]: true,
       [styles['container--close']]: open === true ? true : false
     })}>
-      {updateOk == true ? <Toast /> : setTimeout(() => setUpdateOk(false), 5000)}
+      <Toast active={updateOk} />
 
       <div className={styles.container__template__close}>
         <Close onClick={closeTable} style={{ cursor: 'pointer' }} className={styles.btnX} />
