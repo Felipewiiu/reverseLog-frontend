@@ -10,10 +10,10 @@
     z-index: 1;
     position: absolute;
     border-left: solid 10px rgb(101, 245, 18);
-    top: 0px;
+    top: 32px;
     right: 0px;
     transform: translateX(80000px);
-    transition: all 700ms ease-in-out;
+    transition: all 6000ms ease-in-out;
 
     p {
         margin-left: 1rem;
@@ -24,6 +24,6 @@
     &--active {
         background-color: #3B82F6;
         transform: translateX(0px);
-        transition: all 700ms ease-in-out;
+        transition: all 500ms ease-in-out;
     }
 }
