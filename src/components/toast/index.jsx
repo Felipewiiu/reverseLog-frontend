@@ -5,11 +5,12 @@ import classNames from 'classnames';
 import { ReactComponent as Check } from '../../assets/checkMine.svg';
 
 Toast.propTypes = {
-  font: PropTypes.string,
-  active: PropTypes.bool
+  background: PropTypes.string,
+  active: PropTypes.bool,
+  name: PropTypes.string
 };
 
-export default function Toast({ font, active }) {
+export default function Toast({ background, active, name }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -29,10 +30,10 @@ export default function Toast({ font, active }) {
         [Styles.container]: true,
         [Styles['container--active']]: isVisible
       })}
-      style={{ color: font }}
+      style={{ backgroundColor: background }}
     >
       <Check />
-      <p>Atualizado com sucesso!</p>
+      <p>{name}</p>
     </div>
   );
 }

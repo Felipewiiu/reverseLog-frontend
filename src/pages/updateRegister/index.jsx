@@ -11,7 +11,7 @@ import Toast from 'components/toast';
 
 
 
-export default function Register() {
+export default function UpdateRegister() {
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -28,9 +28,9 @@ export default function Register() {
   const navigate = useNavigate();
   const emailVerify = parseJwt(sessionStorage.getItem('token'));
   const http = useHttp();
-  const [updateOk, setUpdateOk] = useState(false);
-
-  
+  const [update, setUpdate] = useState(false);
+  const [error, setError] = useState(false);
+  console.log(error);
 
   const submit = (event) => {
     event.preventDefault();
@@ -55,12 +55,15 @@ export default function Register() {
       .then((response) => {
         console.log('Cadastro atualizado');
         reloadData();
-        setUpdateOk(true);
-        setTimeout(() => setUpdateOk(false), 5000);
+        setUpdate(true);
+        setTimeout(() => setUpdate(false), 5000);
 
       })
       .catch(error => {
-        console.log(sessionStorage.getItem('token'));
+
+        console.log('algo deu errado');
+        setError(true);
+        setTimeout(() => setError(false), 5000);
 
       });
 
@@ -114,7 +117,8 @@ export default function Register() {
       [styles.container]: true,
       [styles['container--close']]: open === true ? true : false
     })}>
-      <Toast active={updateOk} />
+      <Toast active={update} name={'Atualizado com sucesso!'}/>
+      <Toast active={error} name={'Algo deu errado :('} background={'#F34F4F'}/>
 
       <div className={styles.container__template__close}>
         <Close onClick={closeTable} style={{ cursor: 'pointer' }} className={styles.btnX} />

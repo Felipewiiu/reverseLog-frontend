@@ -4,7 +4,8 @@ import { useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import Home from 'pages/home';
 import Dashboard from 'pages/dashboard';
-import Register from 'pages/register';
+import UpdateRegister from 'pages/updateRegister';
+import Request from 'pages/request';
 
 
 
@@ -25,7 +26,8 @@ export default function AppRoutes() {
 
           <Route path='/home' element={<Home/>}>
             <Route index element={<Dashboard/>}/>
-            <Route path='/home/cadastro' element={<Register/>}/>
+            <Route path='/home/cadastro' element={<UpdateRegister/>}/>
+            <Route path='solicitacao' element={<Request/>}/>
           </Route>
 
         </Routes>
