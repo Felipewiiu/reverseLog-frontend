@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: 0.5rem;
+    }
+
+    &__select {
+        width: 300px;
+        height: 40px;
+        padding-left: 1rem;
+        color: #333;
+        border: 1px solid #8f8f8f;
+        border-radius: 5px;
+        background-color: rgb(253, 253, 253);
+        font-size: 14px;
+    }
+
+    &__select option {
+        font-size: 14px;
+        color: #8b0a0a;
+        background-color: #bd1010;
+    }
+
+    &__select:focus {
+        border-color: #2980b9;
+        box-shadow: 0 0 0 0.2rem rgba(#2980b9, 0.25);
+        outline: none;
+    }
+}

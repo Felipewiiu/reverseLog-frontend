@@ -9,13 +9,17 @@ import { ReactComponent as ArrowDown } from '../../assets/keyboard_arrow_down_24
 import { ReactComponent as ArrowUp } from '../../assets/keyboard_arrow_up_24 1.svg';
 import TextArea from 'components/textArea';
 import InputFile from 'components/inputFile';
+import Select from 'components/select';
 
 export default function Request() {
   const navigate = useNavigate();
   const [product, setProduct] = useState('');
   let [amount, setAmount] = useState(0);
+  const [serial, setSerial] = useState('');
+  const [ describe, setDescribe] = useState('');
+  const [value, setValue] = useState('');
 
-  console.log(product);
+  console.log(value);
 
 
   return (
@@ -42,7 +46,8 @@ export default function Request() {
           </span>
 
           <span>
-            <Input label={'Produto'} placeholder={'Selecione o produto'} value={product} bottom={'0.5rem'} type={'select'} change={setProduct} />
+            {/* <Input label={'Produto'} placeholder={'Selecione o produto'} value={product} bottom={'0.5rem'} type={'select'} change={setProduct} /> */}
+            <Select change={setValue}/>
             <div className={Styles.containerElement}>
               <div className={Styles.ContainerBtnArrow}>
                 <ArrowUp className={Styles.arrowUp} onClick={() => setAmount(amount + 1)} />
@@ -54,12 +59,12 @@ export default function Request() {
           </span>
 
           <span>
-            <Input label={'Número de série'} placeholder={'Digite o Número de série'} value={''} bottom={'0.5rem'} />
+            <Input label={'Número de série'} placeholder={'Digite o Número de série'} value={serial} bottom={'0.5rem'} change={setSerial}/>
 
           </span>
 
           <span>
-            <TextArea />
+            <TextArea  change={setDescribe} value={describe}/>
 
           </span>
         </div>
