@@ -1,3 +1,5 @@
+@import '../../styles/base.scss';
+
 .container {
     display: flex;
     justify-content: center;
@@ -9,7 +11,6 @@
     &__windows {
         width: 90%;
         height: 90%;
-        // background-color: rgb(157, 255, 0);
         border: solid 0.5px rgba(71, 71, 71, 0.384);
 
         &__header {
@@ -40,7 +41,6 @@
             height: 4rem;
             margin-top: 1rem;
             margin-bottom: 2rem;
-            // background-color: rebeccapurple;
 
             p {
                 margin-left: 4rem;
@@ -55,19 +55,51 @@
 
         &__midlle {
             margin-left: 4rem;
-            
+
             span {
                 display: flex;
                 align-items: end;
                 margin-bottom: 1rem;
-                background-color: aqua;
 
-                div {
+                .inputFile {
+                    width: 300px;
+                    height: 40px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                    z-index: 2;
+                }
+
+                .containerElement {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        font-weight: 300;
+                    }
+                }
+
+                .upload {
+                    margin-left: 0.5rem;
+                    cursor: pointer;
+                }
+
+                .ContainerBtnArrow {
+                    height: 40px;
+                    width: 2rem;
                     display: flex;
                     flex-direction: column;
-                    justify-content: end;
-                    margin-left: 0.9rem;
-                    
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-left: 0.5rem;
+
+                    .arrowUp:hover,
+                    .arrowDown:hover {
+                        cursor: pointer;
+                        transform: scale(1.5);
+                    }
+
                 }
 
             }

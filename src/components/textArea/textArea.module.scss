@@ -1,0 +1,27 @@
+.container {
+
+    label {
+        margin-bottom: 0.5rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    width: 18.75rem;
+    height: 10rem;
+
+    .textarea_ {
+        padding: 0.5rem;
+        border: 1px solid #8f8f8f;
+        border-color: rgb(117, 107, 107);
+        border-radius: 0.25rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        font-size: 12px;
+    }
+
+    .textarea_:focus {
+        border-color: #2980b9;
+        box-shadow: 0 0 0 0.2rem rgba(#2980b9, 0.25);
+        outline: none;
+
+    }
+}

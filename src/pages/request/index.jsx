@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styles from '../../pages/request/request.module.scss';
 import { ReactComponent as Close } from '../../assets/close.svg';
 import Input from 'components/input';
@@ -7,9 +7,15 @@ import { ReactComponent as Trolley } from '../../assets/trolley.svg';
 import { ReactComponent as Upload } from '../../assets/upload.svg';
 import { ReactComponent as ArrowDown } from '../../assets/keyboard_arrow_down_24 2.svg';
 import { ReactComponent as ArrowUp } from '../../assets/keyboard_arrow_up_24 1.svg';
+import TextArea from 'components/textArea';
+import InputFile from 'components/inputFile';
 
 export default function Request() {
   const navigate = useNavigate();
+  let [amount, setAmount] = useState(0);
+  
+
+
 
   return (
     <div className={Styles.container}>
@@ -30,18 +36,31 @@ export default function Request() {
 
         <div className={Styles.container__windows__midlle}>
           <span>
-            <Input label={'NF de compra'} placeholder={'Digite o Número da NF'} bottom={'0.5rem'} />
-            <Upload />
+            <InputFile/>
+            <Upload className={Styles.upload} id={'_upload'}/>
           </span>
 
           <span>
-            <Input label={'Produto'} placeholder={'Digite o Número da NF'} bottom={'0.5rem'} />
-            <div>
-              <ArrowUp/>
-              <ArrowDown/>
+            <Input label={'Produto'} placeholder={'Selecione o produto'} value={''} bottom={'0.5rem'} type={'select'}/>
+            <div className={Styles.containerElement}>
+              <div className={Styles.ContainerBtnArrow}>
+                <ArrowUp className={Styles.arrowUp} onClick={ () => setAmount(amount + 1)}/>
+                <ArrowDown className={Styles.arrowDown} onClick={amount > 0 ? () => setAmount(amount - 1) : () => setAmount(0)}/>
+              </div>
+              <p>Qtd: {amount}</p>
+              
             </div>
           </span>
 
+          <span>
+            <Input label={'Número de série'} placeholder={'Digite o Número de série'} value={''} bottom={'0.5rem'} />
+            
+          </span>
+          
+          <span>
+            <TextArea/>
+            
+          </span>
         </div>
 
       </div>
