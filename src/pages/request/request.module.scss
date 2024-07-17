@@ -54,6 +54,11 @@
             }
         }
 
+        .container__midlleBox {
+            display: flex;
+            justify-content: space-between;
+        }
+
         &__midlle {
             margin-left: 4rem;
 
@@ -104,6 +109,21 @@
 
             }
 
+        }
+
+        .container__img {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            height: 100;
+            
+        }
+
+        .containerBtn {
+            width: 100%;        
+            height: auto;
+            padding-left: 4rem;
+            margin-block: 2rem;         
         }
     }
 }

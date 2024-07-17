@@ -28,6 +28,7 @@ export default function InputFile() {
             className={styles.file_input}
             id='upload'
             onChange={handleFileChange}
+            accept={'.pdf'}
           />
 
 

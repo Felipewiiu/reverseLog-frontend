@@ -10,16 +10,16 @@ import { ReactComponent as ArrowUp } from '../../assets/keyboard_arrow_up_24 1.s
 import TextArea from 'components/textArea';
 import InputFile from 'components/inputFile';
 import Select from 'components/select';
+import Button from 'components/button';
 
 export default function Request() {
   const navigate = useNavigate();
   const [product, setProduct] = useState('');
   let [amount, setAmount] = useState(0);
   const [serial, setSerial] = useState('');
-  const [ describe, setDescribe] = useState('');
+  const [describe, setDescribe] = useState('');
   const [value, setValue] = useState('');
 
-  console.log(value);
 
 
   return (
@@ -39,34 +39,42 @@ export default function Request() {
 
         </div>
 
-        <div className={Styles.container__windows__midlle}>
-          <span>
-            <InputFile />
-            <Upload className={Styles.upload} />
-          </span>
+        <div className={Styles.container__midlleBox}>
+          <div className={Styles.container__windows__midlle}>
+            <span>
+              <InputFile />
+              <Upload className={Styles.upload} />
+            </span>
 
-          <span>
-            {/* <Input label={'Produto'} placeholder={'Selecione o produto'} value={product} bottom={'0.5rem'} type={'select'} change={setProduct} /> */}
-            <Select change={setValue}/>
-            <div className={Styles.containerElement}>
-              <div className={Styles.ContainerBtnArrow}>
-                <ArrowUp className={Styles.arrowUp} onClick={() => setAmount(amount + 1)} />
-                <ArrowDown className={Styles.arrowDown} onClick={amount > 0 ? () => setAmount(amount - 1) : () => setAmount(0)} />
+            <span>
+              <Select change={setValue} />
+              <div className={Styles.containerElement}>
+                <div className={Styles.ContainerBtnArrow}>
+                  <ArrowUp className={Styles.arrowUp} onClick={() => setAmount(amount + 1)} />
+                  <ArrowDown className={Styles.arrowDown} onClick={amount > 0 ? () => setAmount(amount - 1) : () => setAmount(0)} />
+                </div>
+                <p>Qtd: {amount}</p>
+
               </div>
-              <p>Qtd: {amount}</p>
+            </span>
 
-            </div>
-          </span>
+            <span>
+              <Input label={'Número de série'} placeholder={'Digite o Número de série'} value={serial} bottom={'0.5rem'} change={setSerial} />
 
-          <span>
-            <Input label={'Número de série'} placeholder={'Digite o Número de série'} value={serial} bottom={'0.5rem'} change={setSerial}/>
+            </span>
 
-          </span>
+            <span>
+              <TextArea change={setDescribe} value={describe} />
 
-          <span>
-            <TextArea  change={setDescribe} value={describe}/>
+            </span>
+          </div>
+          <div className={Styles.container__img}>
+            <img src="/assets/switch.svg" alt="" />
+          </div>
+        </div>
+        <div className={Styles.containerBtn}>
+          <Button name={'Adicionar'} background={'#3B82F6'} color={'#ffff'} />
 
-          </span>
         </div>
 
       </div>
