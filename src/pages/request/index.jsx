@@ -11,6 +11,7 @@ import TextArea from 'components/textArea';
 import InputFile from 'components/inputFile';
 import Select from 'components/select';
 import Button from 'components/button';
+import useRequestProductList from './requestProductList';
 
 export default function Request() {
   const navigate = useNavigate();
@@ -19,8 +20,14 @@ export default function Request() {
   const [serial, setSerial] = useState('');
   const [describe, setDescribe] = useState('');
   const [value, setValue] = useState('');
+  const [requestObject, setRequestObject] = useState([]);
+  const productList = useRequestProductList();
 
+  
 
+  
+
+ 
 
   return (
     <div className={Styles.container}>
@@ -47,7 +54,7 @@ export default function Request() {
             </span>
 
             <span>
-              <Select change={setValue} />
+              <Select change={setValue} productList={productList}/>
               <div className={Styles.containerElement}>
                 <div className={Styles.ContainerBtnArrow}>
                   <ArrowUp className={Styles.arrowUp} onClick={() => setAmount(amount + 1)} />
