@@ -8,11 +8,9 @@ export default function useRequestProductList() {
   const http = useHttp();
   const [listProduct, setListProduct] = useState([]);
 
-
-
   useEffect(() => {
 
-    http.get('/produtos?page=0')
+    http.get('/produtos')
       .then((response) => {
         setListProduct(response.data.content);
         

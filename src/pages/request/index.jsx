@@ -12,6 +12,8 @@ import InputFile from 'components/inputFile';
 import Select from 'components/select';
 import Button from 'components/button';
 import useRequestProductList from './requestProductList';
+import useRequestProductById from './useRequestProductById';
+
 
 export default function Request() {
   const navigate = useNavigate();
@@ -19,13 +21,11 @@ export default function Request() {
   let [amount, setAmount] = useState(0);
   const [serial, setSerial] = useState('');
   const [describe, setDescribe] = useState('');
-  const [value, setValue] = useState('');
+  const [valueSelected, setValue] = useState('1');
   const [requestObject, setRequestObject] = useState([]);
   const productList = useRequestProductList();
+  const image = useRequestProductById({valueSelected});
 
-  
-
-  
 
  
 
@@ -66,17 +66,17 @@ export default function Request() {
             </span>
 
             <span>
-              <Input label={'Número de série'} placeholder={'Digite o Número de série'} value={serial} bottom={'0.5rem'} change={setSerial} />
+              <Input label={'Quantidade'} placeholder={'Digite a quantidade'} valueSelected={serial} bottom={'0.5rem'} change={setSerial} />
 
             </span>
 
             <span>
-              <TextArea change={setDescribe} value={describe} />
+              <TextArea change={setDescribe} valueSelected={describe} />
 
             </span>
           </div>
           <div className={Styles.container__img}>
-            <img src="/assets/switch.svg" alt="" />
+            <img src={`data:image/jpeg;base64,${image}`} alt="" className={Styles.container__img_item}/>
           </div>
         </div>
         <div className={Styles.containerBtn}>

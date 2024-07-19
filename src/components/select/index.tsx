@@ -19,7 +19,7 @@ export default function Select(props: Props) {
         <option value="0" disabled>Selecione um produto</option>
         
         {props.productList.map((product) => (
-          <option key={product.id} value={product.id}>{product.nome}</option>
+          <option key={product.id} value={product.id}>{product.nome.toUpperCase()}</option>
         ))}
 
       </select>

@@ -113,9 +113,17 @@
 
         .container__img {
             display: flex;
+            flex-shrink: 1;
             justify-content: center;
             width: 50%;
             height: 100;
+
+            &_item {
+                display: flex;
+                flex-shrink: 1;
+                width: 25.95rem;
+                height: 25.95rem;
+            }
             
         }
 
