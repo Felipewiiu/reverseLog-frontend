@@ -24,10 +24,10 @@ export default function Request() {
   const [valueSelected, setValue] = useState('1');
   const [requestObject, setRequestObject] = useState([]);
   const productList = useRequestProductList();
-  const image = useRequestProductById({valueSelected});
+  const image = useRequestProductById({ valueSelected });
 
 
- 
+
 
   return (
     <div className={Styles.container}>
@@ -54,15 +54,8 @@ export default function Request() {
             </span>
 
             <span>
-              <Select change={setValue} productList={productList}/>
-              <div className={Styles.containerElement}>
-                <div className={Styles.ContainerBtnArrow}>
-                  <ArrowUp className={Styles.arrowUp} onClick={() => setAmount(amount + 1)} />
-                  <ArrowDown className={Styles.arrowDown} onClick={amount > 0 ? () => setAmount(amount - 1) : () => setAmount(0)} />
-                </div>
-                <p>Qtd: {amount}</p>
+              <Select change={setValue} productList={productList} />
 
-              </div>
             </span>
 
             <span>
@@ -76,7 +69,7 @@ export default function Request() {
             </span>
           </div>
           <div className={Styles.container__img}>
-            <img src={`data:image/jpeg;base64,${image}`} alt="" className={Styles.container__img_item}/>
+            <img src={`data:image/jpeg;base64,${image}`} alt="" className={Styles.container__img_item} />
           </div>
         </div>
         <div className={Styles.containerBtn}>
@@ -84,6 +77,10 @@ export default function Request() {
 
         </div>
 
+      </div>
+
+      <div className={Styles.modal__finish__request}>
+        Modal finalização de cadastro
       </div>
     </div>
   );
