@@ -134,4 +134,14 @@
             margin-block: 2rem;         
         }
     }
+
+    .modal__finish__request {
+        position: absolute;
+        background-color: rgba(66, 66, 75, 0.479);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        
+    }
 }
