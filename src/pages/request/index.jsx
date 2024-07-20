@@ -5,26 +5,26 @@ import Input from 'components/input';
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Trolley } from '../../assets/trolley.svg';
 import { ReactComponent as Upload } from '../../assets/upload.svg';
-import { ReactComponent as ArrowDown } from '../../assets/keyboard_arrow_down_24 2.svg';
-import { ReactComponent as ArrowUp } from '../../assets/keyboard_arrow_up_24 1.svg';
 import TextArea from 'components/textArea';
 import InputFile from 'components/inputFile';
 import Select from 'components/select';
 import Button from 'components/button';
 import useRequestProductList from './requestProductList';
 import useRequestProductById from './useRequestProductById';
+import classNames from 'classnames';
 
 
 export default function Request() {
   const navigate = useNavigate();
-  const [product, setProduct] = useState('');
-  let [amount, setAmount] = useState(0);
   const [serial, setSerial] = useState('');
   const [describe, setDescribe] = useState('');
+  const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValue] = useState('1');
-  const [requestObject, setRequestObject] = useState([]);
   const productList = useRequestProductList();
   const image = useRequestProductById({ valueSelected });
+  const [itensTrolley, setItemTrolley] = useState([]);
+
+
 
 
 
@@ -40,7 +40,7 @@ export default function Request() {
         </div>
         <div className={Styles.container__windows__top}>
           <p>Solicitação de RMA</p>
-          <span>
+          <span onClick={() => setModalstate(true)}>
             <Trolley />
           </span>
 
@@ -72,15 +72,32 @@ export default function Request() {
             <img src={`data:image/jpeg;base64,${image}`} alt="" className={Styles.container__img_item} />
           </div>
         </div>
-        <div className={Styles.containerBtn}>
-          <Button name={'Adicionar'} background={'#3B82F6'} color={'#ffff'} />
+        <div className={Styles.containerBtn} >
+          <span >
+            <Button name={'Adicionar'} background={'#3B82F6'} color={'#ffff'} />
+
+          </span>
 
         </div>
 
       </div>
 
-      <div className={Styles.modal__finish__request}>
-        Modal finalização de cadastro
+      <div className={classNames({
+        [Styles['modal__finish__request--closed']]: true,
+        [Styles['modal__finish__request']]: modalState == true ? true : false
+      })}>
+        <div className={Styles.modal__finish__request__container}>
+          <div className={Styles.modal_header}>
+            <span onClick={() => setModalstate(false)}>
+              <Close />
+            </span>
+          </div>
+          <div className={Styles.modal_content}>
+            <span>
+
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );
