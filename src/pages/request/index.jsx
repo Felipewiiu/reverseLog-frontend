@@ -15,14 +15,15 @@ import classNames from 'classnames';
 
 
 export default function Request() {
-  const navigate = useNavigate();
   const [serial, setSerial] = useState('');
   const [describe, setDescribe] = useState('');
   const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValue] = useState('1');
+  const [itensTrolley, setItemTrolley] = useState([]);
+  
   const productList = useRequestProductList();
   const image = useRequestProductById({ valueSelected });
-  const [itensTrolley, setItemTrolley] = useState([]);
+  const navigate = useNavigate();
 
 
 
