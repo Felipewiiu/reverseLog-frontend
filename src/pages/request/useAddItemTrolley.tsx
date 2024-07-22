@@ -2,7 +2,8 @@ import { useState, useCallback } from 'react';
 
 interface ProductRequest {
   id: string,
-  amount: number
+  amount: number,
+  name: string
 }
 
 export default function useAddItemTrolley() {

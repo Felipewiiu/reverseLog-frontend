@@ -19,7 +19,7 @@ export default function Request() {
   const [amount, setAmount] = useState('');
   const [describe, setDescribe] = useState('');
   const [modalState, setModalstate] = useState(false);
-  const [valueSelected, setValue] = useState('1');
+  const [valueSelected, setValueSelected] = useState('1');
 
   const navigate = useNavigate();
   const productList = useRequestProductList();
@@ -35,10 +35,7 @@ export default function Request() {
 
   };
 
-  console.log(valueSelected);
-
-
-
+  // console.log(productList.find(product => product.));
 
   return (
     <div className={Styles.container}>
@@ -68,7 +65,7 @@ export default function Request() {
             </span>
 
             <span>
-              <Select change={setValue} productList={productList} />
+              <Select change={setValueSelected} productList={productList} />
 
             </span>
 
@@ -109,15 +106,19 @@ export default function Request() {
           <div className={Styles.modal_content}>
             {itemsTrolley.map((item) => (
               <span key={item.id}>
-                <img src={`data:image/jpeg;base64,${JSON.parse(sessionStorage.getItem(`product_${item.id -1}`)).image}`} alt="" />
+                <img src={`data:image/jpeg;base64,${JSON.parse(sessionStorage.getItem(`product_${item.id - 1}`)).image}`} alt="" />
                 <div>
 
 
-                  <p>{`ID: ${item.id}`};</p>
-                  <p>{`Quantidade ${item.amount}`}</p>
+                  <p>{`Produto: ${JSON.parse(sessionStorage.getItem(`product_${item.id - 1}`)).nome}`};</p>
+                  <p>{`Quantidade: ${item.amount} ${item.amount > 1 ? 'unidades' : 'unidade'} `}</p>
                 </div>
               </span>
             ))}
+          </div>
+          <div className={Styles.btnToSend}>
+            <Button name={'Enviar'} background={'#3B82F6'} color={'rgb(0, 95, 249)'} width={'90%'} />
+
           </div>
         </div>
       </div>

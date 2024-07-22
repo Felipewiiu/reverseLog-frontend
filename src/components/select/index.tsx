@@ -10,7 +10,6 @@ interface Props {
 
 export default function Select(props: Props) {
 
-
   return (
     <div className={styles.container}>
       <label htmlFor="product">Produto</label>

@@ -9,17 +9,18 @@ Button.propTypes = {
   func: PropTypes.func,
   background: PropTypes.string,
   color: PropTypes.string,
-  to: PropTypes.string
+  to: PropTypes.string,
+  width: PropTypes.string
 
 };
 
-export default function Button({ name, type, func, background, color, to }) {
+export default function Button({ name, type, func, background, color, to, width }) {
   return (
     <button
       className={Styles.button}
       type={type}
       onClick={func}
-      style={{ background: background, color: color }}
+      style={{ background: background, color: color, width:width }}
     >
       <Link className={Styles.button__text} to={to} >
         {name}
