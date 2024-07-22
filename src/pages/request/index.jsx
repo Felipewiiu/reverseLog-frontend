@@ -117,7 +117,7 @@ export default function Request() {
             ))}
           </div>
           <div className={Styles.btnToSend}>
-            <Button name={'Enviar'} background={'#3B82F6'} color={'rgb(0, 95, 249)'} width={'90%'} />
+            <Button name={'Enviar'} background={'rgb(0, 88, 255)'} color={'rgb(0, 95, 249)'} width={'90%'} />
 
           </div>
         </div>
