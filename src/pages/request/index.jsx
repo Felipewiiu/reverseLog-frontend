@@ -21,19 +21,21 @@ export default function Request() {
   const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValue] = useState('1');
 
+  const navigate = useNavigate();
   const productList = useRequestProductList();
   const image = useRequestProductById({ valueSelected });
-  const navigate = useNavigate();
   const { itemsTrolley, addItem } = useAddItemTrolley();
 
-  console.log(itemsTrolley);
+  productList.forEach((obj, index) => {
+    sessionStorage.setItem(`product_${index}`, JSON.stringify(obj));
+  });
 
   const handleAddItem = () => {
     addItem({ id: valueSelected, amount: Number(amount) });
-    
+
   };
 
-
+  console.log(valueSelected);
 
 
 
@@ -51,6 +53,9 @@ export default function Request() {
           <p>Solicitação de RMA</p>
           <span onClick={() => setModalstate(true)}>
             <Trolley />
+            <div>
+              {itemsTrolley.length}
+            </div>
           </span>
 
         </div>
@@ -102,9 +107,17 @@ export default function Request() {
             </span>
           </div>
           <div className={Styles.modal_content}>
-            <span>
+            {itemsTrolley.map((item) => (
+              <span key={item.id}>
+                <img src={`data:image/jpeg;base64,${JSON.parse(sessionStorage.getItem(`product_${item.id -1}`)).image}`} alt="" />
+                <div>
 
-            </span>
+
+                  <p>{`ID: ${item.id}`};</p>
+                  <p>{`Quantidade ${item.amount}`}</p>
+                </div>
+              </span>
+            ))}
           </div>
         </div>
       </div>
