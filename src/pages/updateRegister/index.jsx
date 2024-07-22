@@ -150,7 +150,7 @@ export default function UpdateRegister() {
 
           </form>
           <div className={styles.container__template__box__btn}>
-            <Button name={'Enviar'} type={'submit'} background={'rgb(0, 140, 255)'} color={'#ffff'} func={submit} form='formUpdate' />
+            <Button name={'Enviar'} type={'submit'} background={'rgb(0, 88, 255)'} color={'#ffff'} func={submit} form='formUpdate' />
           </div>
         </div>
 

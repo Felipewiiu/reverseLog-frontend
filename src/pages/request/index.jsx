@@ -85,7 +85,7 @@ export default function Request() {
         </div>
         <div className={Styles.containerBtn} >
           <span onClick={handleAddItem} >
-            <Button name={'Adicionar'} background={'#3B82F6'} color={'#ffff'} />
+            <Button name={'Adicionar'} background={'rgb(0, 88, 255)'} color={'#ffff'} />
 
           </span>
 
