@@ -12,18 +12,26 @@ import Button from 'components/button';
 import useRequestProductList from './requestProductList';
 import useRequestProductById from './useRequestProductById';
 import classNames from 'classnames';
+import useAddItemTrolley from './useAddItemTrolley';
 
 
 export default function Request() {
-  const [serial, setSerial] = useState('');
+  const [amount, setAmount] = useState('');
   const [describe, setDescribe] = useState('');
   const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValue] = useState('1');
-  const [itensTrolley, setItemTrolley] = useState([]);
-  
+
   const productList = useRequestProductList();
   const image = useRequestProductById({ valueSelected });
   const navigate = useNavigate();
+  const { itemsTrolley, addItem } = useAddItemTrolley();
+
+  console.log(itemsTrolley);
+
+  const handleAddItem = () => {
+    addItem({ id: valueSelected, amount: Number(amount) });
+    
+  };
 
 
 
@@ -60,7 +68,7 @@ export default function Request() {
             </span>
 
             <span>
-              <Input label={'Quantidade'} placeholder={'Digite a quantidade'} valueSelected={serial} bottom={'0.5rem'} change={setSerial} />
+              <Input label={'Quantidade'} placeholder={'Digite a quantidade'} valueSelected={amount} bottom={'0.5rem'} change={setAmount} />
 
             </span>
 
@@ -74,7 +82,7 @@ export default function Request() {
           </div>
         </div>
         <div className={Styles.containerBtn} >
-          <span >
+          <span onClick={handleAddItem} >
             <Button name={'Adicionar'} background={'#3B82F6'} color={'#ffff'} />
 
           </span>
