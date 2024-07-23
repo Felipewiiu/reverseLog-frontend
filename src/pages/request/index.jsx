@@ -14,6 +14,7 @@ import useRequestProductById from './useRequestProductById';
 import classNames from 'classnames';
 import useAddItemTrolley from './useAddItemTrolley';
 import useProductRegistration from './useProductRegistration';
+import {nf} from './mock';
 
 
 export default function Request() {
@@ -21,6 +22,9 @@ export default function Request() {
   const [describe, setDescribe] = useState('');
   const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValueSelected] = useState('1');
+  const [valueImputFile, setValueImputFile] = useState();
+
+  console.log(valueImputFile);
 
   const navigate = useNavigate();
   const productList = useRequestProductList();
@@ -39,9 +43,8 @@ export default function Request() {
   };
 
   const handleProductRegistration = () => {
-   
-    resgistrationProduct({cliente_id: sessionStorage.getItem('email_cliente'), descricao_defeito: describe, produto:itemsTrolley});
-    console.log('sdfsd');
+    resgistrationProduct({cliente_id: sessionStorage.getItem('email_cliente'), descricao_defeito: describe, produto:itemsTrolley, nf_compra:nf});
+    
   };
 
   
@@ -73,7 +76,7 @@ export default function Request() {
         <div className={Styles.container__midlleBox}>
           <div className={Styles.container__windows__midlle}>
             <span>
-              <InputFile />
+              <InputFile getFile={setValueImputFile}/>
               <Upload className={Styles.upload} />
             </span>
 

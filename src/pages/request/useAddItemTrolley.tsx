@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react';
 
 interface ProductRequest {
-  id: string,
-  amount: number,
+  id_produto: string,
+  quantidade: number,
   name: string
 }
 
