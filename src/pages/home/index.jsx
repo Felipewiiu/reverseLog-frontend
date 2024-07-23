@@ -28,7 +28,11 @@ export default function Home() {
 
   if (decodedToken?.sub == null) {
     return <h1>Autenticação necessária!</h1>;
+  }else{
+    sessionStorage.setItem('email_cliente', decodedToken.sub);
   }
+
+  
 
   return (
     <div className={styles.container}>

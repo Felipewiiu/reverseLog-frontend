@@ -13,6 +13,7 @@ import useRequestProductList from './requestProductList';
 import useRequestProductById from './useRequestProductById';
 import classNames from 'classnames';
 import useAddItemTrolley from './useAddItemTrolley';
+import useProductRegistration from './useProductRegistration';
 
 
 export default function Request() {
@@ -25,17 +26,29 @@ export default function Request() {
   const productList = useRequestProductList();
   const image = useRequestProductById({ valueSelected });
   const { itemsTrolley, addItem } = useAddItemTrolley();
+  const resgistrationProduct = useProductRegistration();
+
 
   productList.forEach((obj, index) => {
     sessionStorage.setItem(`product_${index}`, JSON.stringify(obj));
   });
 
   const handleAddItem = () => {
-    addItem({ id: valueSelected, amount: Number(amount) });
+    addItem({ id: Number(valueSelected), amount: Number(amount) });
 
   };
 
-  // console.log(productList.find(product => product.));
+  const handleProductRegistration = () => {
+   
+    resgistrationProduct({cliente_id: sessionStorage.getItem('email_cliente'), descricao_defeito: describe, produto:itemsTrolley});
+    console.log('sdfsd');
+  };
+
+  
+
+
+
+
 
   return (
     <div className={Styles.container}>
@@ -75,7 +88,7 @@ export default function Request() {
             </span>
 
             <span>
-              <TextArea change={setDescribe} valueSelected={describe} />
+              <TextArea change={setDescribe} value={describe} />
 
             </span>
           </div>
@@ -116,7 +129,7 @@ export default function Request() {
               </span>
             ))}
           </div>
-          <div className={Styles.btnToSend}>
+          <div className={Styles.btnToSend} onClick={handleProductRegistration}>
             <Button name={'Enviar'} background={'rgb(0, 88, 255)'} color={'rgb(0, 95, 249)'} width={'90%'} />
 
           </div>
