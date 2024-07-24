@@ -14,6 +14,7 @@ import useRequestProductById from './useRequestProductById';
 import classNames from 'classnames';
 import useAddItemTrolley from './useAddItemTrolley';
 import useProductRegistration from './useProductRegistration';
+import Toast from 'components/toast';
 
 
 
@@ -29,9 +30,9 @@ export default function Request() {
   const productList = useRequestProductList();
   const image = useRequestProductById({ valueSelected });
   const { itemsTrolley, addItem } = useAddItemTrolley();
-  const resgistrationProduct = useProductRegistration();
+  const {registerProduct, send} = useProductRegistration();
 
-
+  console.log(send.error);
 
   productList.forEach((obj, index) => {
     sessionStorage.setItem(`product_${index}`, JSON.stringify(obj));
@@ -43,7 +44,7 @@ export default function Request() {
   };
 
   const handleProductRegistration = () => {
-    resgistrationProduct({
+    registerProduct({
       cliente_id: sessionStorage.getItem('email_cliente'),
       descricao_defeito: describe,
       produto: itemsTrolley,
@@ -113,6 +114,8 @@ export default function Request() {
         [Styles['modal__finish__request--closed']]: true,
         [Styles['modal__finish__request']]: modalState == true ? true : false
       })}>
+        <Toast name={'Falha na solicitação!'} active={send.error} background={'#F34F4F'}/>
+        <Toast name={'Enviado com sucesso!'} active={send.success} />
         <div className={Styles.modal__finish__request__container}>
           <div className={Styles.modal_header}>
             <span onClick={() => setModalstate(false)}>

@@ -1,24 +1,25 @@
-import React, { useEffect } from 'react';
 import useHttp from 'HTTP';
-import Toast from 'components/toast';
+import { useState } from 'react';
 
 interface Product {
   id_produto: number;
-  quantidade: number
+  quantidade: number;
 }
 
 interface Request {
   nf_compra: string;
   produto: Product[];
   descricao_defeito: string;
-  cliente_id: string
+  cliente_id: string;
 }
 
 const useProductRegistration = () => {
   const http = useHttp();
-  
+  const [send, setSend] = useState({loading: false, error: false, success: false});
 
   const registerProduct = (obj: Request) => {
+    setSend({loading: true, error: false, success: false});
+    
     const request = {
       nf_compra: obj.nf_compra,
       produto: obj.produto,
@@ -28,16 +29,14 @@ const useProductRegistration = () => {
 
     http.post('/solicitacao', request)
       .then(response => {
-        console.log(response.data);
-
+        setSend({loading: false, error: false, success: true});
       })
       .catch(error => {
-        console.log(error);
-        <Toast/>;
+        setSend({loading: false, error: true, success: false});
       });
   };
 
-  return registerProduct;
+  return {registerProduct, send};
 };
 
 export default useProductRegistration;
