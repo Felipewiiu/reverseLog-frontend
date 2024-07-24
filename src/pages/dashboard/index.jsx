@@ -18,7 +18,7 @@ export default function Dashboard() {
           <p>Solicitações</p>
         </span>
 
-        <span>
+        <span onClick={() => navigate('/home/andamento')}>
           <Progress />
           <p>Andamento</p>
         </span>

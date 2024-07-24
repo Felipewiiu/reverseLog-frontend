@@ -13,7 +13,7 @@
         height: 90%;
         border: solid 0.5px rgba(71, 71, 71, 0.384);
         overflow-x: hidden;
-
+        border-radius: 10px;
         &__header {
             display: flex;
             justify-content: flex-end;
@@ -172,6 +172,7 @@
         height: 100vh;
         top: 0;
         left: 0;
+        
 
         &__container {
             display: flex;
@@ -180,7 +181,7 @@
             width: 30rem;
             height: 80%;
             background-color: aliceblue;
-            border-radius: 15px;
+            border-radius: 10px;
 
 
             .modal_header {
@@ -191,6 +192,7 @@
                 width: 100%;
                 height: 2.5rem;
                 background-color: rgb(0, 119, 255);
+                border-radius: 10px 10px 0px 0px;
 
                 span {
                     cursor: pointer;
@@ -223,7 +225,7 @@
                     width: 90%;
                     height: 5rem;
                     padding-inline: 1rem;
-                    border-radius: 15px;
+                    border-radius: 10px;
                     background-color: rgb(0, 119, 255);
                     margin-bottom: 1rem;
                     color: aliceblue;
