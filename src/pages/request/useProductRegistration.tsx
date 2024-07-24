@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useHttp from 'HTTP';
+import Toast from 'components/toast';
 
 interface Product {
   id_produto: number;
@@ -15,6 +16,7 @@ interface Request {
 
 const useProductRegistration = () => {
   const http = useHttp();
+  
 
   const registerProduct = (obj: Request) => {
     const request = {
@@ -26,10 +28,12 @@ const useProductRegistration = () => {
 
     http.post('/solicitacao', request)
       .then(response => {
-        console.log(response);
+        console.log(response.data);
+
       })
       .catch(error => {
         console.log(error);
+        <Toast/>;
       });
   };
 

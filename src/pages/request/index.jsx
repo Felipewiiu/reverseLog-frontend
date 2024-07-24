@@ -14,7 +14,7 @@ import useRequestProductById from './useRequestProductById';
 import classNames from 'classnames';
 import useAddItemTrolley from './useAddItemTrolley';
 import useProductRegistration from './useProductRegistration';
-import { nf } from './mock';
+
 
 
 export default function Request() {
@@ -23,7 +23,6 @@ export default function Request() {
   const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValueSelected] = useState('1');
   const [pdeForbase64, setPdfForbase64] = useState();
-
 
 
   const navigate = useNavigate();
@@ -40,7 +39,7 @@ export default function Request() {
 
   const handleAddItem = () => {
     addItem({ id: Number(valueSelected), amount: Number(amount) });
-
+    setAmount('');
   };
 
   const handleProductRegistration = () => {
@@ -87,7 +86,7 @@ export default function Request() {
             </span>
 
             <span>
-              <Input label={'Quantidade'} placeholder={'Digite a quantidade'} valueSelected={amount} bottom={'0.5rem'} change={setAmount} />
+              <Input label={'Quantidade'} placeholder={'Digite a quantidade'} valueSelected={amount} bottom={'0.5rem'} change={setAmount} value={amount}/>
 
             </span>
 
