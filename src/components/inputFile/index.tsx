@@ -30,6 +30,7 @@ export default function InputFile(props: Props) {
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
 
+
     if (selectedFile) {
       try {
         const base64String = await convertPdfToBase64(selectedFile);

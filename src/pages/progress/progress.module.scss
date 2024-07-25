@@ -1,0 +1,137 @@
+.container {
+    width: 100%;
+    height: 100%;
+
+
+    &__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 5rem;
+        padding-left: 4rem;
+
+        h1 {
+            margin: 0px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+
+        }
+    }
+
+    &__main {
+        width: 100%;
+        height: calc(100% - 5rem);
+        padding-left: 4rem;
+        padding-top: 2rem;
+        overflow-y: scroll;
+
+
+        &__card {
+            display: flex;
+            align-items: center;
+            width: 95%;
+            padding-left: 2rem;
+            border-radius: 10px;
+            border: solid 0.5px #0765f275;
+            flex-wrap: wrap;
+
+
+            &__IDrequest {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 15rem;
+                height: 7rem;
+
+                flex-shrink: 1;
+
+                p {
+                    margin-bottom: 1rem;
+                }
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 4rem;
+                    height: 4rem;
+                    color: #fdfdfd;
+                    font-weight: 600;
+                    border-radius: 100px;
+                    box-sizing: content-box;
+                    background-color: #0765F2;
+
+                }
+
+            }
+
+            &__generic {
+                display: flex;
+                align-items: center;
+                padding-top: 1rem;
+                flex-direction: column;
+                width: 13rem;
+                height: 7rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                min-width: 200px;
+                background-color: #0765F2;
+                border-radius: 15px;
+                gap: 1rem;
+                margin-right: 2rem;
+                flex-shrink: 1;
+                transition: all 0.5s ease-in-out;
+                overflow: hidden;
+
+
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    color: #fdfdfd;
+                    font-size: 0.75rem;
+                    gap: 10px;
+
+                    p {
+                        font-size: 0.80rem;
+
+                    }
+
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: #fdfdfd;
+                    flex-shrink: 1;
+                }
+
+                p:nth-of-type(2) {
+                    height: auto;
+                    overflow-y: scroll;
+                    color: #fdfdfd;
+                    word-break: break-all;
+                    word-wrap: normal;
+                    text-align: justify;
+                    margin-top: 1rem;
+                    padding: 1rem;
+
+                }
+
+
+                .describe {
+                    cursor: pointer;
+
+                }
+
+                &--open {
+                    height: 20rem;
+                    transition: all 0.5s ease-in-out;
+
+                }
+
+            }
+
+        }
+    }
+}
