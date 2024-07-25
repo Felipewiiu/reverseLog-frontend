@@ -1,0 +1,15 @@
+
+.custom-card {
+ color: #cc1313;
+}
+
+.custom-knob {
+  --knob-background-color: #ff9900;
+  --knob-border-color: #cc7a00;
+  --knob-handle-color: #ffffff;
+  --knob-handle-border-color: #ff9900;
+  --knob-value-color: #cc1313;
+  --knob-value-font-size: 16px;
+}
+
+

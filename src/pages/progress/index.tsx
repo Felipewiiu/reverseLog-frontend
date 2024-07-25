@@ -5,6 +5,8 @@ import { ReactComponent as PicturePdf } from '../../assets/picture_as_pdf.svg';
 import { ReactComponent as Vector } from '../../assets/Vector.svg';
 import { ReactComponent as Arrow } from '../../assets/keyboard_arrow_down_24 2.svg';
 import classNames from 'classnames';
+// import Kinob from 'components/knob';
+import Knob from '../../components/knob/index';
 
 export default function Progress() {
 
@@ -37,7 +39,7 @@ export default function Progress() {
 
           <span className={styles.container__main__card__generic}>
             <div><PicturePdf /> <p>NF de compra</p></div>
-            <p>20008</p>
+            <p>20009</p>
           </span>
 
           <span className={classNames({
@@ -48,8 +50,8 @@ export default function Progress() {
             <p className={styles.describe} onClick={hendlecard}>
               <Arrow />
             </p>
-            <p>Apresenta defeito nas portas de comunicação. 
-              Foi feito reparo e mesmo assim não resolvel Apresenta defeito nas portas de comunicação. 
+            <p>Apresenta defeito nas portas de comunicação.
+              Foi feito reparo e mesmo assim não resolvel Apresenta defeito nas portas de comunicação.
               Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
               Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
               Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
@@ -59,11 +61,12 @@ export default function Progress() {
 
 
           </span>
-
+          <Knob />
         </div>
+        
       </div>
 
-
+      
     </div>
   );
 }
