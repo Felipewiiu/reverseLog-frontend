@@ -5,12 +5,12 @@ import { ReactComponent as PicturePdf } from '../../assets/picture_as_pdf.svg';
 import { ReactComponent as Vector } from '../../assets/Vector.svg';
 import { ReactComponent as Arrow } from '../../assets/keyboard_arrow_down_24 2.svg';
 import classNames from 'classnames';
-// import Kinob from 'components/knob';
-import Knob from '../../components/knob/index';
+import { Knob } from 'primereact/knob';
 
 export default function Progress() {
 
   const [cardOpen, setCardOpen] = useState(false);
+  const [stateProgress, setStateProgress] = useState(70);
 
   const hendlecard = () => {
     setCardOpen(!cardOpen);
@@ -51,22 +51,24 @@ export default function Progress() {
               <Arrow />
             </p>
             <p>Apresenta defeito nas portas de comunicação.
-              Foi feito reparo e mesmo assim não resolvel Apresenta defeito nas portas de comunicação.
-              Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
-              Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
-              Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
-              Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
-              Apresenta defeito nas portas de comunicação. Foi feito reparo e mesmo assim não resolvel
-              Foi feito reparo e mesmo assim não resolvel</p>
+              Foi feito reparo e mesmo assim não resolvel
+              Apresenta defeito nas portas de comunicação.
+              Foi feito reparo e mesmo assim não resolvelApresenta defeito nas portas de comunicação.
+              Foi feito reparo e mesmo assim não resolvel
+            </p>
 
 
           </span>
-          <Knob />
+
+          <span className={styles.container__main__card__knob} >
+            <Knob value={stateProgress} valueTemplate={'{value}%'} readOnly textColor='#0765F2' valueColor='#0765F2' />
+
+          </span>
         </div>
-        
+
       </div>
 
-      
+
     </div>
   );
 }

@@ -39,14 +39,14 @@ export default function Request() {
   });
 
   const handleAddItem = () => {
-    addItem({ id: Number(valueSelected), amount: Number(amount) });
+    addItem({ id: Number(valueSelected), amount: Number(amount), description:describe });
     setAmount('');
+    setDescribe('');
   };
 
   const handleProductRegistration = () => {
     registerProduct({
       cliente_id: sessionStorage.getItem('email_cliente'),
-      descricao_defeito: describe,
       produto: itemsTrolley,
       nf_compra: pdeForbase64
     });
