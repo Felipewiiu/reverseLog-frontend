@@ -34,7 +34,6 @@ export default function InputFile(props: Props) {
     if (selectedFile) {
       try {
         const base64String = await convertPdfToBase64(selectedFile);
-        console.log(base64String);
         props.getFile(base64String);
       } catch (error) {
         console.error('Error:', error);
@@ -51,7 +50,7 @@ export default function InputFile(props: Props) {
 
   return (
     <div className={styles.container}>
-      <label htmlFor="upload" className={styles.file_label}>NF de compra</label>
+      <label htmlFor="upload" className={styles.file_label}>NF de RMA</label>
       <div className={styles.container_file}>
         <label className={styles.box} htmlFor="upload">
           <input

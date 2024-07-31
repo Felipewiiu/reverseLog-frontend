@@ -10,7 +10,7 @@
 
     &__windows {
         width: 90%;
-        height: 90%;
+        height: 95%;
         border: solid 0.5px rgba(71, 71, 71, 0.384);
         overflow-x: hidden;
         border-radius: 10px;
@@ -69,9 +69,9 @@
                 align-items: center;
                 width: 1rem;
                 height: 1rem;
-                background-color: #ff5132;
                 border-radius: 200px;
                 font-size: 12px;
+                background-color: rgb(255, 28, 28);
                 color: rgb(255, 255, 255);
             }
         }

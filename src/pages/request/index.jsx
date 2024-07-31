@@ -24,7 +24,9 @@ export default function Request() {
   const [modalState, setModalstate] = useState(false);
   const [valueSelected, setValueSelected] = useState('1');
   const [pdeForbase64, setPdfForbase64] = useState();
+  const [numberNF, setNumberNf] = useState();
 
+ 
 
   const navigate = useNavigate();
   const productList = useRequestProductList();
@@ -32,7 +34,7 @@ export default function Request() {
   const { itemsTrolley, addItem } = useAddItemTrolley();
   const {registerProduct, send} = useProductRegistration();
 
-  console.log(send.error);
+  console.log(itemsTrolley.length);
 
   productList.forEach((obj, index) => {
     sessionStorage.setItem(`product_${index}`, JSON.stringify(obj));
@@ -48,7 +50,8 @@ export default function Request() {
     registerProduct({
       cliente_id: sessionStorage.getItem('email_cliente'),
       produto: itemsTrolley,
-      nf_compra: pdeForbase64
+      nf_RMA: pdeForbase64,
+      numero_nf: Number(numberNF)
     });
 
   };
@@ -79,6 +82,11 @@ export default function Request() {
             <span>
               <InputFile getFile={setPdfForbase64} />
               <Upload className={Styles.upload} />
+            </span>
+
+            <span>
+              <Input label={'Númer da NF'} placeholder={'Digite o número da sua NF'}  bottom={'0.5rem'} change={setNumberNf} value={numberNF}/>
+
             </span>
 
             <span>

@@ -8,9 +8,10 @@ interface Product {
 }
 
 interface Request {
-  nf_compra: string;
+  nf_RMA: string;
   produto: Product[];
   cliente_id: string;
+  numero_nf: number
 }
 
 const useProductRegistration = () => {
@@ -21,9 +22,10 @@ const useProductRegistration = () => {
     setSend({loading: true, error: false, success: false});
     
     const request = {
-      nf_compra: obj.nf_compra,
+      nf_RMA: obj.nf_RMA,
       produto: obj.produto,
-      cliente_id: obj.cliente_id
+      cliente_id: obj.cliente_id,
+      numero_nf: obj.numero_nf
     };
 
     http.post('/solicitacao', request)

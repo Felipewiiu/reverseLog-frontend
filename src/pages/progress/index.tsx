@@ -38,7 +38,7 @@ export default function Progress() {
           </span>
 
           <span className={styles.container__main__card__generic}>
-            <div><PicturePdf /> <p>NF de compra</p></div>
+            <div><PicturePdf /> <p>NF de RMA</p></div>
             <p>20009</p>
           </span>
 

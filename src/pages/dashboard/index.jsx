@@ -15,7 +15,7 @@ export default function Dashboard() {
       <div className={styles.container__dashborad}>
         <span onClick={() => navigate('/home/solicitacao')}>
           <RequestRma />
-          <p>Solicitações</p>
+          <p>Criar solicitação</p>
         </span>
 
         <span onClick={() => navigate('/home/andamento')}>
