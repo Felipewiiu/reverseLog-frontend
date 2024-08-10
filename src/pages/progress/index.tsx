@@ -6,17 +6,19 @@ import { ReactComponent as Vector } from '../../assets/Vector.svg';
 import { ReactComponent as Arrow } from '../../assets/keyboard_arrow_down_24 2.svg';
 import classNames from 'classnames';
 import { Knob } from 'primereact/knob';
+import useProgressRequest from './useProgressRequest';
 
 export default function Progress() {
 
   const [cardOpen, setCardOpen] = useState(false);
   const [stateProgress, setStateProgress] = useState(70);
+  const progressRequestList = useProgressRequest();
 
   const hendlecard = () => {
     setCardOpen(!cardOpen);
   };
 
-  console.log(cardOpen);
+
 
   return (
     <div className={styles.container}>
