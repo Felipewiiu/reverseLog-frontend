@@ -1,19 +1,19 @@
-# Sistema de Gerenciamento de logistica reversa
+# 💻 Sistema de Gerenciamento de logistica reversa
 
 ![Screencast from 2024-08-12 15-04-40.gif](public/assets/Screencast%20from%202024-08-12%2015-04-40.gif)
 
-## Resumo
+## 📝 Resumo
 
 O Sistema de Gerenciamento de logistica reversa foi desenvolvido para automatizar o processo de devolução de produtos em
 uma distribuidora.
 
-## História
+## 📖 História
 
 O Sistema de Reverselog foi desenvolvido para atender à necessidade de automatizar o processo de
 devolução de produtos em uma distribuidora. O sistema anterior era manual e ineficiente, causando atrasos no
 processamento das devoluções e insatisfação dos clientes.
 
-## Motivação
+##  📈 Motivação
 
 O principal fator que motivou o desenvolvimento do Sistema de Gerenciamento de Devoluções foi a necessidade de:
 
@@ -25,7 +25,7 @@ O principal fator que motivou o desenvolvimento do Sistema de Gerenciamento de D
 - Reduzir custos: O sistema automatizado ajuda a reduzir custos eliminando a necessidade de trabalho manual e prevenindo
   fraudes e erros.
 
-## Justificativa
+## 💰 Justificativa
 
 O Sistema de Gerenciamento de Devoluções oferece vários benefícios para a empresa, incluindo:
 
@@ -35,7 +35,15 @@ O Sistema de Gerenciamento de Devoluções oferece vários benefícios para a em
   fornece informações sobre o status das devoluções, reduzindo a frustração.
 - Menores custos: Ajuda a reduzir custos eliminando a necessidade de trabalho manual e prevenindo fraudes e erros.
 
-# Recursos oferecidos
+# ⚙️ Funcionalidades
 
-- [ ] Cadastros de novos clientes
-  
+- [x] Cadastros de novos clientes.
+- [x] Autenticação via token JWT.
+- [x] Cadastro de solicitações.
+- [x] Atualização de dados cadastrais.
+- [x] Importação e conversão de arquivos PDF.
+- [x] Consulta e aconpanhamento das solcitações.
+- [ ] Recuperação de senhas.
+- [ ] Cadastro de novos produtos.
+- [ ] Fale conosco integrado com servidor de email.
+- [ ] Aviso ao cliente por email para cada alteração no status da solicitação.
