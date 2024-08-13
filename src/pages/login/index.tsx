@@ -49,7 +49,7 @@ export default function Login() {
 
       <div className={styles.container__screenAnimation}>
         <h1 className={styles.container__screenAnimation__title}>
-          ❮ Smartlog ❯
+          ❮ Reverselog ❯
         </h1>
 
       </div>
